@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/</link>
+    <description>Recent content on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prendre des notes sécurisées</title>
+      <link>https://arfntz.github.io/post/memocode/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/memocode/</guid>
+      <description>&lt;p&gt;Memocode est d&amp;rsquo;abord une application mobile qui permet de prendre des notes &lt;a href=&#34;https://fr.wiktionary.org/wiki/crypter&#34;&gt;chiffrées/cryptées&lt;/a&gt;.
+L&amp;rsquo;algorithme utilisé, &lt;a href=&#34;https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES 256&lt;/a&gt;, assure un niveau de sécurité fort.
+Les notes peuvent aussi être chiffrées/déchiffrées via les outils complémentaires fournis, en ligne de commande, pour Linux, MacOS, et bientôt&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Windows.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>En marche vers le travail à distance ?</title>
+      <link>https://arfntz.github.io/post/teletravail_approche_mutuelle/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/teletravail_approche_mutuelle/</guid>
+      <description>&lt;p&gt;Tout le monde ne peut pas travailler à distance. Lorsque c&#39;est possible, est-ce bénéfique ? En tant que travailleur numérique, d&#39;abord confiné, puis libre, pendant 6 mois, j&#39;ai noté &lt;strong&gt;deux effets positifs du travail à distance&lt;/strong&gt;, applicables en présentiel&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Développer en Swift sur Linux, côté serveur</title>
+      <link>https://arfntz.github.io/post/swiftserverside/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/swiftserverside/</guid>
+      <description>&lt;p&gt;Cette note présente le langage Swift pour un usage &#39;côté serveur&#39;. Elle montre comment configurer un environnement de développement sur Linux.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Travailler en équipe sur un projet versionné</title>
+      <link>https://arfntz.github.io/post/git_essentials/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/git_essentials/</guid>
+      <description>&lt;p&gt;Voici l&#39;essentiel pour travailler, bien et facilement, en équipe, sur un projet versionné. &lt;code&gt;Git&lt;/code&gt; est un outil incontournable en gestion de versions. Certainement le plus utilisé au monde. En quelques commandes vous pouvez participer à un projet versionné. Cette note montre comment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Faire sa sauvegarde en une seule commande</title>
+      <link>https://arfntz.github.io/post/sauvegardes/</link>
+      <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/sauvegardes/</guid>
+      <description>&lt;p&gt;Dans cette note celui ou celle qui utilise la ligne de commande Linux trouvera les commandes simples permettant de maintenir un répertoire &lt;code&gt;B&lt;/code&gt; à l&#39;image d&#39;un répertoire &lt;code&gt;A&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ecrire un diagramme de Gantt</title>
+      <link>https://arfntz.github.io/post/text2gantt/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/text2gantt/</guid>
+      <description>&lt;p&gt;Pour produire un diagramme de Gantt il est courant d&#39;utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative moins courante : l&#39;utilisation d&#39;un fichier texte et d&#39;une application mobile iOS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>À propos</title>
+      <link>https://arfntz.github.io/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/about/</guid>
+      <description>🌟 🧾 ⚙️ 🏄 🗺️
+ Développement logiciel = innovation + stabilité
+ Combien de temps passé sur des problèmes techniques ?
+ Nous surfons de nouvelles vagues portées par des concepts et des méthodes de fond. Chaque spot est différent, il faut s&amp;rsquo;adapter.
+ Ce blog veut vous faire gagner du temps en photographiant des procédures efficaces.
+Les outils utilisés sont Hugo, Bootstrap, Chunky-poster. Des images freepik sont utilisées.</description>
+    </item>
+    
+    <item>
+      <title>Entraîner son oreille musicale</title>
+      <link>https://arfntz.github.io/post/displaychord/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/displaychord/</guid>
+      <description>&lt;p&gt;Midi Display Chord est une application qui permet d&#39;entraîner son oreille musicale.
+Elle est destinée au musicien qui apprend à jouer d&#39;un instrument et qui veut identifier ce qu&#39;il entend.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Expliquer l&#39;harmonie en musique</title>
+      <link>https://arfntz.github.io/post/sonetmusique/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/sonetmusique/</guid>
+      <description>&lt;p&gt;Cette note traite des origines de l&#39;harmonie en théorie de la musique occidentale, de Pythagore à Bill Withers ;)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Évaluer un investissement logiciel</title>
+      <link>https://arfntz.github.io/post/investissement_logiciel/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/investissement_logiciel/</guid>
+      <description>&lt;p&gt;Vous avez un projet personnel ? un projet d&#39;entreprise, petit ou grand ?
+Il implique la mise en oeuvre d&#39;outils logiciels ?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://arfntz.github.io/post/activitywatch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/activitywatch/</guid>
+      <description>Quelle est la couleur du temps ?</description>
+    </item>
+    
+  </channel>
+</rss>

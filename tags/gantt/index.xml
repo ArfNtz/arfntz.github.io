@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gantt on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/tags/gantt/</link>
+    <description>Recent content in gantt on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/tags/gantt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ecrire un diagramme de Gantt</title>
+      <link>https://arfntz.github.io/post/text2gantt/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/text2gantt/</guid>
+      <description>&lt;p&gt;Pour produire un diagramme de Gantt il est courant d&#39;utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative moins courante : l&#39;utilisation d&#39;un fichier texte et d&#39;une application mobile iOS.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

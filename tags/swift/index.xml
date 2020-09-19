@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>swift on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/tags/swift/</link>
+    <description>Recent content in swift on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ecrire un diagramme de Gantt</title>
+      <link>https://arfntz.github.io/post/text2gantt/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/text2gantt/</guid>
+      <description>&lt;p&gt;Pour produire un diagramme de Gantt il est courant d&#39;utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative moins courante : l&#39;utilisation d&#39;un fichier texte et d&#39;une application mobile iOS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Entraîner son oreille musicale</title>
+      <link>https://arfntz.github.io/post/displaychord/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/displaychord/</guid>
+      <description>&lt;p&gt;Midi Display Chord est une application qui permet d&#39;entraîner son oreille musicale.
+Elle est destinée au musicien qui apprend à jouer d&#39;un instrument et qui veut identifier ce qu&#39;il entend.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

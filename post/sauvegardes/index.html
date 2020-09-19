@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Faire sa sauvegarde en une seule commande | 
+    Apps &amp; Notes
+  
+</title><meta name="description" content="Techniques iOS, Swift ..."><meta name="author" content="Frantz Epineuse">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png " sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0c344b">
+<link rel="icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://arfntz.github.io/post/sauvegardes/"><meta property="og:title" content="Faire sa sauvegarde en une seule commande" />
+<meta property="og:description" content="Dans cette note celui ou celle qui utilise la ligne de commande Linux trouvera les commandes simples permettant de maintenir un répertoire B à l&#39;image d&#39;un répertoire A." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arfntz.github.io/post/sauvegardes/" />
+<meta property="og:image" content="https://arfntz.github.io/kevin.jpg" />
+<meta property="article:published_time" content="2019-05-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-06T00:00:00+00:00" />
+<meta itemprop="name" content="Faire sa sauvegarde en une seule commande">
+<meta itemprop="description" content="Dans cette note celui ou celle qui utilise la ligne de commande Linux trouvera les commandes simples permettant de maintenir un répertoire B à l&#39;image d&#39;un répertoire A.">
+<meta itemprop="datePublished" content="2019-05-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="790">
+<meta itemprop="image" content="https://arfntz.github.io/kevin.jpg">
+
+
+
+<meta itemprop="keywords" content="rsync," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://arfntz.github.io/kevin.jpg"/>
+
+<meta name="twitter:title" content="Faire sa sauvegarde en une seule commande"/>
+<meta name="twitter:description" content="Dans cette note celui ou celle qui utilise la ligne de commande Linux trouvera les commandes simples permettant de maintenir un répertoire B à l&#39;image d&#39;un répertoire A."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://arfntz.github.io">Apps &amp; Notes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/about/">À propos</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">May 6, 2019</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>790 mots</span>
+                            <span><i class="fas fa-clock mr-2"></i>4 mins</span>
+                        </div>
+
+                        <h1>Faire sa sauvegarde en une seule commande</h1>
+
+                        <ul class="authors list-inline"><li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/frantz-epineuse/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_64x0_resize_box_2.png 1x, /authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_128x0_resize_q100_box_2.png 2x, /authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_192x0_resize_q100_box_2.png 3x">
+                                        <img src="/authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_64x0_resize_box_2.png" class="rounded-circle" alt="Frantz Epineuse">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-0"><a href="/authors/frantz-epineuse/" class="small"></a>
+                            </h5></div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/kevin_hu69ffab359879bb2eb3240e008e4429b5_183377_900x500_fit_q75_box.jpg" class="img-fluid rounded mx-auto d-block" alt="Faire sa sauvegarde en une seule commande">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Dans cette note celui ou celle qui utilise la ligne de commande Linux trouvera les commandes simples permettant de maintenir un répertoire <code>B</code> à l'image d'un répertoire <code>A</code>.</p>
+<blockquote>
+<p><strong>Pré-requis:</strong>
+Rsync <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> est installé sur le poste de travail.
+Ne pas avoir peur de la ligne de commande <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+</blockquote>
+<p>La sauvegarde, indépendamment de la compression, du chiffrement, ou de l&rsquo;archivage (notion de rétention) des données, passe toujours par la synchronisation d&rsquo;au moins deux espaces de stockage. Cette note montre comment utiliser <code>Rsync</code> pour maintenir un répertoire <code>B</code> à l'image d'un répertoire <code>A</code>.</p>
+<p><code>Rsync</code> est une commande disponible en standard sous Linux et MacOS. C'est un outil gratuit capable de détecter les fichiers modifiés ou nouveaux, et de mettre un répertoire <code>B</code> à l'image d'un répertoire <code>A</code>.</p>
+<p>Voyons :</p>
+<ul>
+<li>Comment accéder à <code>rsync</code></li>
+<li>Comment lister les différences entre un répertoire source et un répertoire destination</li>
+<li>Comment mettre la destination à l&rsquo;image de la source</li>
+<li>La sauvegarde</li>
+<li>Des infos complémentaires</li>
+</ul>
+<h2 id="comment-accéder-à-rsync">Comment accéder à <code>rsync</code></h2>
+<p>Ouvrir un ligne de commande.</p>
+<p>Sous MacOS, lancer l&rsquo;application <code>Terminal</code> qui se trouve dans le groupe <code>Utilitaires</code>.
+Sous Linux Ubuntu, il y a un racourcis clavier : <code>Ctrl-Alt-T</code>.</p>
+<p>Entrer la commande <code>rsync</code>, normalement l&rsquo;outil est installé en standard, et une liste d&rsquo;options s&rsquo;affiche, en commençant par ces lignes :</p>
+<pre><code class="language-bash">rsync  version 2.6.9  protocol version 29
+Copyright (C) 1996-2006 by Andrew Tridgell, Wayne Davison, and others.
+&lt;http://rsync.samba.org/&gt;
+...
+</code></pre>
+<h2 id="comment-lister-les-différences">Comment lister les différences</h2>
+<p>Entre un répertoire source et un répertoire destination :</p>
+<pre><code class="language-bash">rsync -avunh --del --progress /Volumes/P2/mon_dossier/ /Volumes/FE_SAV/mon_dossier/ &gt;~/list
+</code></pre>
+<p>La commande ci-dessus compare un répertoire <strong>source</strong> <code>/Volumes/P2/mon_dossier/</code> et un répertoire <strong>destination</strong> <code>/Volumes/FE_SAV/mon_dossier/</code>. Entre la commande <code>rsync</code> et les deux chemins de répertoires se trouvent les options :</p>
+<ul>
+<li><strong>a</strong>: parcours tous les sous-répertoires, conserve les attributs de fichiers  (création, modification, droits, propriétaire, groupe, liens &hellip;)</li>
+<li><strong>v</strong>: affichage détaillé de l&rsquo;avancement (fichier par fichier)</li>
+<li><strong>u</strong>: mise à jour de la destination avec les nouveaux fichiers sources</li>
+<li><strong>n</strong>: désactive toute modification (permet de voir ce qui serait effectué)</li>
+<li><strong>h</strong>: affichant les unités agregées (Ko, Mo, Go, &hellip;)</li>
+<li><strong>- - del</strong>: suppression des fichiers présents sur la destination et absents de la source</li>
+<li><strong>- - progress</strong>: affiche l&rsquo;avancement</li>
+</ul>
+<blockquote>
+<p>Attention : le slash <code>/</code> à la fin des chemins est important, sans lui un sous-répertoire &lsquo;ref/ref&rsquo; serait créé sur la destination.</p>
+</blockquote>
+<p>La partie <code>&gt;~/list</code>, située en fin de ligne, redirige (via le caractère <code>&gt;</code>) le resultat de la commande <code>rsync</code>dans un fichier texte nommé <code>list</code> et situé dans le répertoire principal de l&rsquo;utilisateur courant (<code>~/</code>).</p>
+<p>Grâce à l&rsquo;option <code>-n</code> la commande est executée &lsquo;à blanc&rsquo;, elle permet de consulter les mises à jour identifiées dans le fichier <code>~/list</code>. Le fichier peut être ouvert avec n&rsquo;importe quel éditeur de texte, ou bien via cette commande <code>less ~/list</code>.</p>
+<h2 id="comment-mettre-la-destination-à-limage-de-la-source">Comment mettre la destination à l&rsquo;image de la source</h2>
+<p>Voici la ligne de commande qui permet de sauvegarder un dossier <code>A</code> vers un dossier <code>B</code>.</p>
+<pre><code class="language-bash">rsync -avuh --del --progress /Volumes/P2/mon_dossier/ /Volumes/FE_SAV/mon_dossier/ &gt;~/list
+</code></pre>
+<p>Seule différence par rapport au paragraphque précédent, on enlève l&rsquo;option <code>-n</code>.
+Le répertoire <code>/Volumes/P2/mon_dossier/</code>se trouve sauvegardé sur <code>/Volumes/FE_SAV/mon_dossier/</code>.</p>
+<blockquote>
+<p>Attention du coup cette commande effectue réellement les modifications de données</p>
+</blockquote>
+<p>Le fichier <code>~/list</code> permet de voir l&rsquo;avancement. La commande <code>tail -f ~/list</code> permet de voir les nouvelles lignes au fur et à mesure de la synchronisation.</p>
+<h2 id="la-sauvegarde">La sauvegarde</h2>
+<p>La commande <code>rsync</code> ci-dessus permet une sauvegarde simple d&rsquo;un espace de stockage sur un autre.</p>
+<p>Sur cette base il faut ensuite faire de bons choix :</p>
+<ul>
+<li>utiliser des espaces différents en fonction de la quantité, de la fréquence de mise à jour, et de la sensibilité des données</li>
+<li>s&rsquo;assurer de bien être en phase avec ses engagements s&rsquo;il en est</li>
+<li>tester la restauration régulièrement</li>
+<li>répartir géographiquement les espaces de stockage</li>
+<li>définir un politique de rétention (archivage)</li>
+</ul>
+<h2 id="des-infos-complémentaires">Des infos complémentaires</h2>
+<p>D&rsquo;autres commandes unix complémentaires à <code>rsync</code> permettent d&rsquo;automatiser / de planifier les sauvegardes, de compresser, et de chiffrer les données.</p>
+<p><code>Rsync</code> compare un chemin source et un chemin destination, quelque soit le type de stockage (cloud, usb, disque, réseau &hellip;).
+Dans le cas ci-dessus il peut s&rsquo;agir de deux disques durs externes, nommés &lsquo;P2&rsquo; et &lsquo;FE_SAV&rsquo;, connectés sur MacOS.
+Leurs chemins respectifs sont <code>/Volumes/P2</code> et <code>/Volumes/FE_SAV</code>.
+Selon votre configuration les chemins seront différents, le reste sera identique.</p>
+<p>Il peut être bien de nettoyer le répertoire source avant de sauvegarder. Certains systèmes génèrent des fichiers indésirables dans une sauvegarde, tels que <code>.DS_Store</code> sous MacOS.
+L&rsquo;utilitaire <code>dot_clean</code> permet le nettoyage.</p>
+<pre><code class="language-bash">doc_clean /Volumes/P2/ref/
+</code></pre>
+<p>L&rsquo;ancien système de fichiers FAT présente un décalage de 2 secondes entre les dates de fichiers source et destination. L&rsquo;option <code>--modify-window=2</code> de la commande <code>rsync</code> permet de remédier au problème.</p>
+<p>Si besoin le manuel utilisateur installé en standard sur votre système peut être consulté via la commande <code>man rsync</code>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Le site officiel : <a href="https://rsync.samba.org">rsync</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>L&rsquo;article wikipedia : <a href="https://fr.wikipedia.org/wiki/Interpr%C3%A9teur_de_commandes">Interpréteur de commandes</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/rsync">
+                                    <i class="fas fa-tag mr-2"></i>rsync
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2farfntz.github.io%2fpost%2fsauvegardes%2f&text=Faire%20sa%20sauvegarde%20en%20une%20seule%20commande">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farfntz.github.io%2fpost%2fsauvegardes%2f&title=Faire%20sa%20sauvegarde%20en%20une%20seule%20commande">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farfntz.github.io%2fpost%2fsauvegardes%2f&t=Faire%20sa%20sauvegarde%20en%20une%20seule%20commande">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2farfntz.github.io%2fpost%2fsauvegardes%2f&title=Faire%20sa%20sauvegarde%20en%20une%20seule%20commande">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://arfntz.github.io/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                        <a href="mailto:arfntz@gmail.com" class="icons d-block">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li><li class="list-inline-item">
+                            <a href="https://github.com/arfntz" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://cv.arfntz.fr" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        (c) Frantz Epineuse
+                    
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

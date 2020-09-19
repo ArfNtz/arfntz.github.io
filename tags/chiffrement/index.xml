@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chiffrement on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/tags/chiffrement/</link>
+    <description>Recent content in chiffrement on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/tags/chiffrement/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prendre des notes sécurisées</title>
+      <link>https://arfntz.github.io/post/memocode/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/memocode/</guid>
+      <description>&lt;p&gt;Memocode est d&amp;rsquo;abord une application mobile qui permet de prendre des notes &lt;a href=&#34;https://fr.wiktionary.org/wiki/crypter&#34;&gt;chiffrées/cryptées&lt;/a&gt;.
+L&amp;rsquo;algorithme utilisé, &lt;a href=&#34;https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES 256&lt;/a&gt;, assure un niveau de sécurité fort.
+Les notes peuvent aussi être chiffrées/déchiffrées via les outils complémentaires fournis, en ligne de commande, pour Linux, MacOS, et bientôt&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Windows.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

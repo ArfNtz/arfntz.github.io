@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>harmonie on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/tags/harmonie/</link>
+    <description>Recent content in harmonie on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/tags/harmonie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Expliquer l&#39;harmonie en musique</title>
+      <link>https://arfntz.github.io/post/sonetmusique/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/sonetmusique/</guid>
+      <description>&lt;p&gt;Cette note traite des origines de l&#39;harmonie en théorie de la musique occidentale, de Pythagore à Bill Withers ;)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

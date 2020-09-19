@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Ecrire un diagramme de Gantt | 
+    Apps &amp; Notes
+  
+</title><meta name="description" content="Gestion de projet"><meta name="author" content="Frantz Epineuse">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png " sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0c344b">
+<link rel="icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://arfntz.github.io/post/text2gantt/"><meta property="og:title" content="Ecrire un diagramme de Gantt" />
+<meta property="og:description" content="Gestion de projet" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arfntz.github.io/post/text2gantt/" />
+<meta property="og:image" content="https://arfntz.github.io/text2gantt.png" />
+<meta property="article:published_time" content="2019-03-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-03-09T00:00:00+00:00" />
+<meta itemprop="name" content="Ecrire un diagramme de Gantt">
+<meta itemprop="description" content="Gestion de projet">
+<meta itemprop="datePublished" content="2019-03-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="950">
+<meta itemprop="image" content="https://arfntz.github.io/text2gantt.png">
+
+
+
+<meta itemprop="keywords" content="gantt,app,swift," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://arfntz.github.io/text2gantt.png"/>
+
+<meta name="twitter:title" content="Ecrire un diagramme de Gantt"/>
+<meta name="twitter:description" content="Gestion de projet"/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://arfntz.github.io">Apps &amp; Notes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/about/">À propos</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">March 9, 2019</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>950 mots</span>
+                            <span><i class="fas fa-clock mr-2"></i>5 mins</span>
+                        </div>
+
+                        <h1>Ecrire un diagramme de Gantt</h1>
+
+                        <ul class="authors list-inline"><li class="list-inline-item mr-3">
+                    <div class="media author"><a href="/authors/frantz-epineuse/" class="mr-3">
+                                    <picture>
+                                        <source srcset="/authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_64x0_resize_box_2.png 1x, /authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_128x0_resize_q100_box_2.png 2x, /authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_192x0_resize_q100_box_2.png 3x">
+                                        <img src="/authors/frantz-epineuse/profile_hu4ce1ca392c3ebf16175038434c536da1_155847_64x0_resize_box_2.png" class="rounded-circle" alt="Frantz Epineuse">
+                                    </picture>
+                                </a><div class="media-body">
+                            <h5 class="name my-0"><a href="/authors/frantz-epineuse/" class="small">Frantz Epineuse</a>
+                            </h5></div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div><div class="row justify-content-center mb-3">
+                                <div class="col-lg-10">
+                                    <img data-src="/images/text2gantt_hu4c0bf4a1b51430f2c0fdae39c9064961_518241_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Ecrire un diagramme de Gantt">
+                                </div>
+                            </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Pour produire un diagramme de Gantt il est courant d'utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative moins courante : l'utilisation d'un fichier texte et d'une application mobile iOS.</p>
+<blockquote>
+<p><strong>Le diagramme de Gantt</strong> est un outil utilisé en ordonnancement et en gestion de projet et permettant de visualiser dans le temps les diverses tâches composant un projet. Il s&rsquo;agit d&rsquo;une représentation d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet. - Wikipedia</p>
+</blockquote>
+<p><strong>note:</strong> L&rsquo;article <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Gantt">Diagramme de Gantt</a> de Wikipedia contient un paragraphe sur l&rsquo;offre logicielle.</p>
+<p>Regardons la solution utilisant un fichier texte et une application de transformation en diagramme :</p>
+<ul>
+<li>Le texte formaté</li>
+<li>Comment y noter les tâches d&rsquo;un projet</li>
+<li>Comment transformer les notes en diagramme</li>
+</ul>
+<p>C&rsquo;est parti :</p>
+<h1 id="le-texte-formaté">Le texte formaté</h1>
+<h2 id="outillé-et-collaboratif">Outillé et collaboratif</h2>
+<p>Le fichier texte est facilement partageable, lisible et modifiable par tous, <strong>sans logiciel ni coût supplémentaire</strong>. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Il s&rsquo;intègre naturellement à tous les environnements <strong>collaboratifs</strong> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (gMail, gDocs, Teams, SharePoint &hellip;).
+Nous pouvons donc :</p>
+<ul>
+<li>travailler à plusieurs simultanément</li>
+<li>consulter les modifications de chacun dans le temps</li>
+</ul>
+<h2 id="le-fond-et-la-forme">Le fond et la forme</h2>
+<p>Par essence un fichier texte ne contient que la structure et les idées.
+Pendant l&rsquo;écriture, en écartant ainsi d&rsquo;éventuelles questions sur la forme et la mise en page, l&rsquo;attention reste centrée sur les idées.
+Ce principe est utilisé pour l&rsquo;écriture de thèses, d&rsquo;articles, ou de livres.
+Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> pour écrire, puis un modèle <code>LaTeX</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> pour la mise en forme.</p>
+<h2 id="les-langages-à-balises">Les langages à balises</h2>
+<p>Bien qu&rsquo;il séparent le contenu et la présentation, bien qu&rsquo;ils restent modifiables en tant que texte, les langages à balises n&rsquo;entrent pas dans la même catégorie : il sont beaucoup moins lisibles. Beaucoup de métiers ont développé leurs propres <a href="https://fr.wikipedia.org/wiki/Langage_de_balisage">Markup Langage</a>, parfois accompagnés de feuilles de style <code>XSL</code> pour la mise en forme. La présence des balises augmente la taille du fichier et diminue la lisibilité. Ils laissent parfois place à d&rsquo;autres fichiers textes de type <code>json</code>,<code>yaml</code>.</p>
+<h2 id="le-langage-naturel">Le langage naturel</h2>
+<p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?</p>
+<p>&hellip;</p>
+<p>Pour notre diagramme de Gantt, nous allons exprimer les tâches d&rsquo;un projet le plus simplement possible.</p>
+<h1 id="noter-les-tâches">Noter les tâches</h1>
+<p>Les notes sont prises dans un fichier texte.</p>
+<p>Il s&rsquo;agit d&rsquo;une une photo à un instant <code>t</code> d&rsquo;un projet.</p>
+<blockquote>
+<p><strong>remarque:</strong> En utilisant un environnement collaboratif <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ces &lsquo;images&rsquo; se trouve conservées / historiées.</p>
+</blockquote>
+<h2 id="exemple">Exemple</h2>
+<p>Voici un exemple, puis son explication.</p>
+<pre><code># Team work;;2019/05/12
+* Specification
+&gt; 1. Technical infrastructure ; Create initial document ; 2019/04/01 ; Smith,10,10 ; Smith,5,5
+&gt; 2. Business model ; Improve part 4, add more choices ; 2019/04/01 ; John,12,12 Smith,4,4 ; John,3,3 Smith,1,1 ; 1
+! Paper board ; Buy a new blue pencil ; 2019/03/28 ; Arthur
+- After eight;;;;;1
+* Production
+. Project committee ; Waiting confirmation ; 2019/04/10 ; Client
+= Signature ; Check legal stuffs ; 2019/04/10 ; Lawyer
+- Construction ; Find teammates ; 2019/04/16 ; Me,15,0 
+/ Delivery ; Planification ; 2019/04/16 ; PO,10,0
+</code></pre>
+<p>La première ligne commence par <code>#</code> pour indiquer qu&rsquo;il s&rsquo;agit d&rsquo;un <strong>thème</strong>. Les lignes à suivre feront partie du thème.</p>
+<p>La deuxième ligne commence par <code>*</code> pour indiquer qu&rsquo;il s&rsquo;agit d&rsquo;un <strong>objectif</strong>. Les lignes à suivre feront partie de l&rsquo;objectif.</p>
+<p>Les autres lignes sont des tâches. Le premier caractère de chaque ligne indique un status.</p>
+<p>Pour résumer, le premier caractère qualifie la ligne :</p>
+<pre><code># : c'est un theme, un tâche principale qui regroupe les lignes à suivre
+* : c'est un objectif, sorte de sous-theme, qui aussi regroupe les lignes à suivre
+- : tâche à faire
+&gt; : tâche en cours
+/ : tâche terminée
+. : étape, jalon
+= : en attente
+! : risque
+</code></pre>
+<h2 id="format">Format</h2>
+<p>Toutes les lignes suivent ce format :</p>
+<p>[status] {identifiant}. [sujet] ; {action} ; {date fin souhaitée} ; {estimation}&hellip; ; {consommation}&hellip; ; {dependance}</p>
+<p>Seules les informations entre <code>[]</code> crochets sont obligatoires.
+Celles entre <code>{}</code> accolades sont facultatives.
+Les informations sont séparées par un <code>;</code> point-virgule.</p>
+<p><code>{identifiant}</code> est toujours suivie d&rsquo;un <code>.</code>point. L&rsquo;identifiant sert à noter noter une dépendance, s&rsquo;il est reporté dans le champs {dependance} d&rsquo;une autre tâche (en fin de ligne)</p>
+<p><code>{date fin souhaitée}</code> est au format `aaaa/mm/jj``</p>
+<p><code>{estimation}</code> et <code>{consommation}</code> ont pour format : <code>text,nombre,nombre ...</code>.
+Chaque triplet identifie une resource <code>text</code>, une charge, une durée.
+Plusieurs triplets peuvent se suivre séparé par un espace.</p>
+<p>Les autres informations sont des champs texte.
+Le caractère <code>;</code> n&rsquo;est pas utilisé car il sert de séparateur d&rsquo;informations.</p>
+<h1 id="transformation-en-diagramme">Transformation en diagramme</h1>
+<p>Lorsque l&rsquo;application <a href="(https://itunes.apple.com/fr/app/task-note/id1470748388)">TaskNote</a> est installée sur un appareil iOS et que le texte ci-dessus est envoyé (par mail, par airDrop, etc), l&rsquo;application <code>TaskNote</code> s&rsquo;ouvre et permet d&rsquo;exporter le diagramme et la liste des tâches au format pdf.</p>
+<p>Voici un aperçu :</p>
+<figure class="figure">
+    <a href="/images/timeline.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/timeline.png" width="900px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/tasklist.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasklist.png" width="900px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<p>Voici le lien vers l&rsquo;AppStore :
+<a href="https://itunes.apple.com/fr/app/task-note/id1470748388"><img src="/images/AppStore.png" alt="AppStore"></a></p>
+<blockquote>
+<p>L&rsquo;application est écrite en langage <a href="https://swift.org">swift</a> et pourrait être convertie en ligne de commande.</p>
+</blockquote>
+<hr>
+<h1 id="à-propos-déditeur-de-texte">À propos d&rsquo;éditeur de texte</h1>
+<p>Ils sont déjà présents en standard :</p>
+<ul>
+<li>sous Windows, quelque soit la version, l&rsquo;application <code>notepad</code> est disponible</li>
+<li>sous MacOS, il s&rsquo;agit de <code>TextEdit</code></li>
+<li>sous Linux Ubuntu, ce serait <code>gEdit</code></li>
+<li>sous iOS, pourquoi pas <code>Notes</code> ou <code>[Memocode](../memocode)</code></li>
+<li>sous chromeOS, il y a <code>Text</code></li>
+<li>&hellip;</li>
+</ul>
+<p>Ils sont gratuits, à installer sur Windows, MacOS ou Linux :</p>
+<ul>
+<li>Microsoft <code>[vsCode](https://code.visualstudio.com)</code></li>
+<li><code>[SublimeText](https://www.sublimetext.com)</code></li>
+<li><code>[Atom](https://atom.io)</code></li>
+<li>&hellip;</li>
+</ul>
+<p>Il est toujours possible de forcer l&rsquo;export/import sans format avec</p>
+<ul>
+<li>LibreOffice</li>
+<li>Google Docs</li>
+<li>Microsoft Office 365</li>
+<li>Pages</li>
+<li>&hellip;</li>
+</ul>
+<p>Il est confortable d&rsquo;être équipé d&rsquo;un correcteur orthographique et grammatical.
+En ce moment j&rsquo;utilise <code>vsCode</code> et son extension <code>Spell Right</code>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Voir la dernière partie sur cette page à propos des éditeurs de texte. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="../git_essentials/">Travailler en équipe sur un projet versionné</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://fr.wikipedia.org/wiki/Markdown">MarkDown</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://fr.wikipedia.org/wiki/LaTeX">LaTeX</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/tags/gantt">
+                                    <i class="fas fa-tag mr-2"></i>gantt
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/app">
+                                    <i class="fas fa-tag mr-2"></i>app
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/tags/swift">
+                                    <i class="fas fa-tag mr-2"></i>swift
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&text=Ecrire%20un%20diagramme%20de%20Gantt">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20un%20diagramme%20de%20Gantt">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&t=Ecrire%20un%20diagramme%20de%20Gantt">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20un%20diagramme%20de%20Gantt">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    <div class="related-content row mt-5 row-cols-1 row-cols-lg-3"><div class="col mb-3">
+                <div class="card h-100">
+    
+    <a href="/post/displaychord/" class="d-block"><img data-src="/images/fe_playing_hu2b481721c889391985be60238d46a486_690775_700x350_resize_box_2.png" class="card-img-top mx-auto d-block" alt="Entraîner son oreille musicale"><div class="card-body">
+            <h4 class="card-title">Entraîner son oreille musicale</h4>
+            <p class="card-text text-muted text-uppercase">December 16, 2018</p>
+            <div class="card-text">
+                Midi Display Chord est une application qui permet d&#39;entraîner son oreille musicale. Elle est destinée au musicien qui apprend à jouer d&#39;un instrument et qui veut identifier ce qu&#39;il entend.
+
+            </div>
+        </div>
+    </a>
+</div>
+
+            </div></div>
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://arfntz.github.io/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                        <a href="mailto:arfntz@gmail.com" class="icons d-block">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li><li class="list-inline-item">
+                            <a href="https://github.com/arfntz" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://cv.arfntz.fr" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        (c) Frantz Epineuse
+                    
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>
