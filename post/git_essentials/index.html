@@ -45,7 +45,7 @@
 <meta itemprop="description" content="Travailler en équipe sur un projet versionné">
 <meta itemprop="datePublished" content="2019-08-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="wordCount" content="820">
 <meta itemprop="image" content="https://arfntz.github.io/outils.jpg">
 
 
@@ -89,7 +89,7 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">August 4, 2019</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>770 mots</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>820 mots</span>
                             <span><i class="fas fa-clock mr-2"></i>4 mins</span>
                         </div>
 
@@ -214,6 +214,15 @@ git tag -d v0.0.2
 La deuxième l&rsquo;efface en local.</p>
 <p>Comment lister les tags</p>
 <pre><code class="language-bash">git tag
+</code></pre>
+<p>Comment supprimer tout l&rsquo;historique ?
+Attention, action non utilisée en tant que contributeur. Vous devez avoir les droits &lsquo;administrateur&rsquo; sur le serveur pour ce faire.</p>
+<pre><code class="language-bash">git checkout --orphan nouveau_depart
+git add -A
+git commit -am &quot;nouveau départ&quot;
+git branch -D master
+git branch -m master
+git push -f origin master
 </code></pre>
 <section class="footnotes" role="doc-endnotes">
 <hr>
