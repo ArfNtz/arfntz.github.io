@@ -18,9 +18,7 @@
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/memocode/</guid>
-      <description>&lt;p&gt;Memocode est d&amp;rsquo;abord une application mobile qui permet de prendre des notes &lt;a href=&#34;https://fr.wiktionary.org/wiki/crypter&#34;&gt;chiffrées/cryptées&lt;/a&gt;.
-L&amp;rsquo;algorithme utilisé, &lt;a href=&#34;https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES 256&lt;/a&gt;, assure un niveau de sécurité fort.
-Les notes peuvent aussi être chiffrées/déchiffrées via les outils complémentaires fournis, en ligne de commande, pour Linux, MacOS, et bientôt&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; Windows.&lt;/p&gt;</description>
+      <description>&lt;p&gt;En tant que &amp;lsquo;travailleur numérique&amp;rsquo; je prend certaines notes confidentielles sur téléphone. L&#39;application &#39;Notes&#39;, intégrée à mon téléphone, permet de verrouiller l&#39;accès aux notes, mais elle ne chiffre pas la note elle même, et ne permet pas de la transférer chiffrée. Les applications existantes m&amp;rsquo;ont semblé trop complexes. J&amp;rsquo;ai préféré &lt;strong&gt;apprendre à créer une solution plus adaptée&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,16 +27,16 @@ Les notes peuvent aussi être chiffrées/déchiffrées via les outils complémen
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/teletravail_approche_mutuelle/</guid>
-      <description>&lt;p&gt;Tout le monde ne peut pas travailler à distance. Lorsque c&#39;est possible, est-ce bénéfique ? En tant que travailleur numérique, d&#39;abord confiné, puis libre, pendant 6 mois, j&#39;ai noté &lt;strong&gt;deux effets positifs du travail à distance&lt;/strong&gt;, applicables en présentiel&lt;/p&gt;</description>
+      <description>&lt;p&gt;Tout le monde ne peut pas travailler à distance. Lorsque c&#39;est possible, est-ce bénéfique ? En tant que travailleur numérique, d&#39;abord confiné, puis libre, pendant 6 mois, j&#39;ai noté ces &lt;strong&gt;deux effets positifs du travail à distance&lt;/strong&gt;, applicables en présentiel&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Développer en Swift sur Linux, côté serveur</title>
+      <title>Swift, langage de programmation performant, clair, open-source, et multi plate-forme</title>
       <link>https://arfntz.github.io/post/swiftserverside/</link>
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/swiftserverside/</guid>
-      <description>&lt;p&gt;Cette note présente le langage Swift pour un usage &#39;côté serveur&#39;. Elle montre comment configurer un environnement de développement sur Linux.&lt;/p&gt;</description>
+      <description>&lt;p&gt;J&#39;apprécie de pouvoir programmer dans un langage performant et clair. C&#39;est la cas de Swift. Étendre ce potentiel à d&#39;autres plate-formes que celles d&#39;Apple est possible. Cette note présente le langage Swift pour un usage &#39;côté serveur&#39;, puis elle montre comment configurer un environnement de développement sur Linux.&lt;/p&gt;</description>
     </item>
     
     <item>
