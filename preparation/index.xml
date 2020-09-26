@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Preparations on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/preparation/</link>
+    <description>Recent content in Preparations on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    
+	<atom:link href="https://arfntz.github.io/preparation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://arfntz.github.io/preparation/assistant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/preparation/assistant/</guid>
+      <description>Un assistant pédagogique  L&amp;rsquo;apprentissage est naturellement en nous. Cette idée devient postulat lors d&amp;rsquo;échanges internationaux sur la pédagogie, par exemple ici sur TED Talks, avec la formule &amp;ldquo;we are natural learners&amp;rdquo;. Dans la logique pédagogique qui découle du postulat, si l&amp;rsquo;enseignant propose, l&amp;rsquo;apprenant dispose. Ce dernier choisit son programme et son rythme. Parvenir à cette pédagogie personnalisée n&amp;rsquo;est pas facile lorsque le nombre d&amp;rsquo;élèves est grand. Je pense à nos écoles par exemple.</description>
+    </item>
+    
+  </channel>
+</rss>
