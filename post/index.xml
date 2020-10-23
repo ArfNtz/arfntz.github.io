@@ -36,7 +36,7 @@
       <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/swiftserverside/</guid>
-      <description>&lt;p&gt;J&#39;apprécie de pouvoir programmer dans un langage performant et clair. C&#39;est la cas avec Swift. Étendre ce potentiel à d&#39;autres plate-formes que celles d&#39;Apple est possible. Cette note présente le langage Swift pour un usage &#39;côté serveur&#39;, puis elle montre comment configurer un environnement de développement sur Linux&lt;/p&gt;</description>
+      <description>&lt;p&gt;Swift est un langage performant et clair. Étendre le potentiel de Swift à d&#39;autres plate-formes que celles d&#39;Apple est possible. Cette note présente le langage Swift pour un usage &#39;côté serveur&#39;, elle montre comment configurer un environnement de développement sur Linux, et donne quelques projets en exemple.&lt;/p&gt;</description>
     </item>
     
     <item>

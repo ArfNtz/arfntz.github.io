@@ -1,0 +1,68 @@
+{
+    "scenario": {
+        "code": "snowboard_programmation",
+        "niveau": "initié",
+        "alternatives": {
+            "*": "q1",
+            "q1": "rien,for_1,for_2,for_3,for_4",
+            "for_1": "*",
+            "for_2": "*",
+            "for_3": "*",
+            "for_4": "fin",
+            "fin": "*",
+            "rien": "*"
+        },
+        "intentions": [
+            {
+                "q1": {
+                    "rien": "aucune, rien, non, négatif, pas de",
+                    "for_1": "premier, un",
+                    "for_2": "deuxième, deux",
+                    "for_3": "troisième, trois",
+                    "for_4": "quatrième, quatre"
+                },
+                "for_4": {
+                    "rien": "aucune, rien, non, négatif, pas de",
+                    "fin": "premier, un, deuxième, deux, troisième, trois, bataleon, burton, apo, custom, eviltwin, selekta"
+                }
+            }
+        ],
+        "etapes": [
+            {
+                "etape": "q1",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "md": "Ok, nous allons d'abord vous équiper d'une bonne planche.\n            J'en ai quelques-unes en réserve mais le programme de gestion des stocks n'est pas terminé. Il ne parvient pas à lister les planches. Le voici : \n            affiche_liste() {\n                for\n                    print (planche);\n                }\n            }\n            L'instruction `for` est vide, je vois plusieurs possibilités de la compléter: \n            - for (int i=0; i<planches.length; i++) [#for_1]\n            - for planche in planches [#for_2]\n            - planches.foreach( planche => { [#for_3]\n            - for (Board planche : planches) { [#for_4]\n            Laquelle essayons-nous ?"
+            },
+            {
+                "etape": "for_1",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "score": "-1",
+                "md": "euh ... ca ne marche pas. La varibale 'i' n'est pas utilisée dans le reste du programme. une autre idée ?"
+            },
+            {
+                "etape": "for_2",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "score": "-1",
+                "md": "Cela ne fonctionne pas. Il me semble que la bonne instruction devrait référencer la variable `planche` utilisée dans l'instruction `print`"
+            },
+            {
+                "etape": "for_3",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "score": "-1",
+                "md": "Cela ne fonctionne pas. Avec cette ligne il manque une parenthèse fermante au programme."
+            },
+            {
+                "etape": "for_4",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "score": "+1",
+                "md": "Ah parfait, merci. Nous avons la liste des planches :\n            - Apo Selekta TwinTip 154 [#fin]\n            - Bataleon EvilTwin [#fin]\n            - Burton Custom X [#fin]\n            Les voici en image : \n            !(Apo)[http://www.iesanetwork.com/n.auriac/snowfrance/images/test%20boardfreestyle.jpg]\n            !(Bataleon)[https://images.evo.com/imgp/700/9793/167101/bataleon-evil-twin-snowboard-2007-.jpg]\n            !(Burton)[http://www.surfshop.fr/55412-large_default/custom.jpg]\n            Ces planches sont recommandées pour le freestyle. Voici une vidéo en exemple : ![freestyle](https://www.youtube.com/watch?v=7G_nXpv8JbE).\n            Quelle planche souhaitez-vous ?"
+            },
+            {
+                "etape": "fin",
+                "niveau": "initié",
+                "savoir-faire": "programmation.swift.boucle_for",
+                "md": "Très bon choix, c'est une planche facile et performante ..."
+            }
+        ]
+    }
+}

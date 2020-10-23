@@ -142,7 +142,7 @@ Cette commande git créé un <strong>répertoire projet</strong>. Il contient to
 <p>Traditionnellement c&rsquo;est le nom donné à une branche dite de développement, recevant les travaux de plusieurs personnes. Dans le répertoire d’un projet, entrer ceci :</p>
 <pre><code class="language-bash">git checkout develop
 </code></pre>
-<p>Souvent l&rsquo;organisation des branches dépend des échéances du projet et de la nature des travaux. Dans tous les cas, après s&rsquo;être positionné sur la bonne branche projet, &lsquo;develop&rsquo; dans notre cas, chacun devra créer sa branche de travail.</p>
+<p>Souvent l&rsquo;organisation des branches dépend des échéances du projet et de la nature des travaux. Dans tous les cas, après s'être positionné sur la bonne branche projet, &lsquo;develop&rsquo; dans notre cas, chacun devra créer sa branche de travail.</p>
 <h2 id="créer-sa-branche-mon_travail">Créer sa branche ‘mon_travail’</h2>
 <p>Usuellement chaque développeur créé une branche dans laquelle il réalise son développement.</p>
 <pre><code class="language-bash">git branch mon_travail
@@ -156,7 +156,7 @@ Toutes nos modifications feront partie de cette branche.</p>
 git commit -m &quot;ce que font mes modifications&quot;
 git push --set-upstream origin mon_dev
 </code></pre>
-<p>La première commande met l’ensemble des changements effectués en l&rsquo;état “ajouté” pour git.
+<p>La première commande met l’ensemble des changements effectués en l'état “ajouté” pour git.
 La deuxième déclare l&rsquo;ensemble des modifications, appelé &lsquo;commit&rsquo; en terminologie git, avec un commentaire, obligatoire.
 La troisième envoie l’ensemble au serveur git.</p>
 <h2 id="pour-mettre-à-jour-la-branche-develop">Pour mettre à jour la branche ‘develop’</h2>
@@ -166,7 +166,7 @@ git pull
 </code></pre>
 <p>La première commande récupère les branches publiées sur le serveur.
 La deuxième récupère en local les modifications publiées sur le serveur.
-L&rsquo;ensemble permet d&rsquo;être à jour des autres publications intégrées, et de partir sur de bonnes bases.</p>
+L&rsquo;ensemble permet d'être à jour des autres publications intégrées, et de partir sur de bonnes bases.</p>
 <h2 id="pour-fusionner-une-branche">Pour fusionner une branche</h2>
 <p>Les branches de travail constituent des demandes d’intégration (le terme anglais &lsquo;<strong>pull request</strong>&rsquo; est utilisé).
 Certaines plate-formes, dont GitHub et GitLab, gèrent ces demandes (sous forme de tickets).
