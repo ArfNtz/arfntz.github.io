@@ -48,7 +48,7 @@ Rien ne remplace l&#39;échange humain entre enseignant et apprenant. L&rsquo;as
 Le conférencier évoque les résultats PISA 1 de différents pays, dans leurs contextes. Il soutient cette idée : créer des conditions personnalisées facilite l&rsquo;apprentissage. Une personne qui choisit son programme et son rythme progresse naturellement mieux.
 Rien ne remplace l&#39;échange humain entre enseignant et apprenant. L&rsquo;assistant numérique 2 aide l&rsquo;enseignant à créer des conditions personnalisées d&rsquo;apprentissage.">
 
-<meta itemprop="wordCount" content="1930">
+<meta itemprop="wordCount" content="2012">
 
 
 
@@ -102,8 +102,8 @@ Il soutient cette idée : <strong>créer des conditions personnalisées</strong>
 Une personne qui choisit son programme et son rythme progresse naturellement mieux.</p>
 <p>Rien ne remplace l'échange humain entre enseignant et apprenant.
 L&rsquo;<strong>assistant numérique</strong> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> aide l&rsquo;enseignant à créer des conditions personnalisées d&rsquo;apprentissage.
-Il donne aux <strong>artefacts</strong> pédagogiques <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> la force d&rsquo;un <strong>dialogue</strong> personnalisé avec chaque apprenant.
-L&rsquo;enseignant conçoit l&rsquo;artefact. L&rsquo;assistant aide à sa mise en oeuvre.</p>
+Il donne aux <strong>artefacts</strong> pédagogiques <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> la force d&rsquo;un <strong>dialogue</strong> personnalisé avec chaque apprenant.</p>
+<p>L&rsquo;enseignant conçoit l&rsquo;artefact. L&rsquo;assistant aide à sa mise en oeuvre.</p>
 <p>Dans ce contexte nous allons :</p>
 <ul>
 <li>écrire un artefact et</li>
@@ -112,7 +112,7 @@ L&rsquo;enseignant conçoit l&rsquo;artefact. L&rsquo;assistant aide à sa mise 
 <h2 id="écrire-un-artefact">Écrire un artefact</h2>
 <p>Voici un exemple de dialogue entre apprenant et assistant.
 Les mots entre [] sont les étapes du dialogue.
-Les mots précédés de # correspondent aux <strong>intentions</strong> du participant (ses choix).</p>
+Les mots précédés de # correspondent aux <strong>intentions</strong> du participant (à ses choix).</p>
 <pre><code class="language-md">[welcome]
     Bonjour et bienvenue chez ABC.
     Nous vous proposons de :
@@ -171,11 +171,11 @@ Les mots précédés de # correspondent aux <strong>intentions</strong> du parti
 </code></pre>
 <p>Le dialogue suit un <strong>scénario</strong> constitué d&rsquo;<strong>alternatives</strong>.
 L&rsquo;assistant détecte les <strong>intentions</strong> du participant (ses choix).
-Ce scénario permet d&rsquo;acquérir un <strong>savoir-faire</strong> en programmation.
-Ce sont les éléments de notre artéfact que nous allons écrire: <strong>savoir-faire</strong>, <strong>intentions</strong>, <strong>alternatives</strong>, et <strong>scénario</strong>.</p>
+Le scénario donné en exemple permet d&rsquo;acquérir un <strong>savoir-faire</strong> en programmation.</p>
+<p>Nous venons de citer les éléments consituant notre artéfact, nous allons les écrire : <strong>savoir-faire</strong>, <strong>intentions</strong>, <strong>alternatives</strong>, et <strong>scénario</strong>.</p>
 <h3 id="le-savoir-faire">Le savoir-faire</h3>
-<p>Associés à une discipline, le <strong>savoir-faire</strong> utilise des <strong>compétences</strong> et des <strong>connaissances</strong>.
-La discipline décrite dans le tableau ci-dessous combine chaque colonne pour former un savoir-faire, par exemple &lsquo;parler anglais en utilisant la conjugaison&rsquo;.</p>
+<p>Associés à une discipline, le <strong>savoir-faire</strong> utilise des <strong>compétences</strong> et des <strong>connaissances</strong>.</p>
+<p>La discipline décrite dans le tableau ci-dessous combine chaque colonne pour former un savoir-faire, par exemple &lsquo;parler anglais en utilisant la conjugaison&rsquo;.</p>
 <table>
 <thead>
 <tr>
@@ -217,8 +217,8 @@ La discipline décrite dans le tableau ci-dessous combine chaque colonne pour fo
 </tr>
 </tbody>
 </table>
-<p>Dans cet exemple toutes les combinaisons sont possibles.
-Voici comment écrire les combinaisons de cette discipline :</p>
+<p>Nous pouvons remarquer que dans ce tableau exemple toutes les combinaisons entre discipline, compétence,et onnaissance sont possibles.</p>
+<p>Voici comment écrire les combinaisons de cette discipline :</p>
 <pre><code class="language-json">{
     &quot;discipline&quot;: {
         &quot;nom&quot;: &quot;anglais&quot;,
@@ -332,8 +332,8 @@ Voici comment écrire les combinaisons de cette discipline :</p>
     }
 }
 </code></pre>
-<p>Pour la suite nous désignons un <strong>savoir-faire</strong> par une discipline, une compétence, et une connaissance.
-Par exemple, &lsquo;parler anglais en utilisant la conjugaison&rsquo; s'écrit :</p>
+<p>Pour la suite nous désignons un <strong>savoir-faire</strong> comme étant la combinaison d&rsquo;une discipline, d&rsquo;une compétence, et d&rsquo;une connaissance.</p>
+<p>Par exemple, le savoir-faire &lsquo;parler anglais en utilisant la conjugaison&rsquo; s'écrit :</p>
 <pre><code class="language-md">.anglais.parler.conjugaison
 </code></pre>
 <p>Passons maintenant à l'écriture des alternatives du dialogue.</p>
@@ -351,10 +351,10 @@ Par exemple, &lsquo;parler anglais en utilisant la conjugaison&rsquo; s'écrit :
     snowboard_programmation_initié --&gt; rien
     rien --&gt; [*]
 </code></pre>
-<p>Chaque mot ou suite de mots séparés par _ est une étape.</p>
+<p>Dans ce texte chaque mot, ou suite de mots séparés par _, est une étape.</p>
 <p>L&rsquo;astérisque * représente le participant en début et en fin de dialogue.</p>
 <p>La flèche &ndash;&gt; représente une transition possible entre deux étapes.</p>
-<p>Voici l'écriture du graphe des alternatives pour le début de notre artefact :</p>
+<p>Voici l'écriture du graphe des <strong>alternatives</strong> pour le début de notre artefact :</p>
 <pre><code class="language-json">{
     &quot;alternatives&quot;: {
         &quot;*&quot;: &quot;welcome&quot;,
@@ -369,7 +369,7 @@ Par exemple, &lsquo;parler anglais en utilisant la conjugaison&rsquo; s'écrit :
     }
 }
 </code></pre>
-<p>Après avoir choisit son <strong>activité</strong> le participant entre dans les alternatives spécifiques de l&rsquo;artefact :</p>
+<p>Après avoir choisit son activité le participant entre dans les <strong>alternatives</strong> spécifiques de l&rsquo;artefact :</p>
 <pre><code class="language-json">{
     &quot;alternatives&quot;: {
         &quot;*&quot;: &quot;q1&quot;,
@@ -383,12 +383,12 @@ Par exemple, &lsquo;parler anglais en utilisant la conjugaison&rsquo; s'écrit :
     },
 }
 </code></pre>
-<p>Chaque paire d'étapes, notée &ldquo;etape A&rdquo;:&ldquo;etape B&rdquo;, est une transition possible.</p>
+<p>Chaque paire d'étapes, notée &ldquo;etape A&rdquo;:&ldquo;etape B&rdquo;, est une transition possible. Nous avons ainsi terminé l'écriture des <strong>alternatives</strong>.</p>
 <p>Passons maintenant à l'écriture des différentes intentions possibles (les choix offerts aux participants).</p>
 <h3 id="les-intentions">Les intentions</h3>
-<p>L&rsquo;intention est contextuelle, elle dépend de l&rsquo;alternative.
-Dans notre exemple, l&rsquo;intention &lsquo;[#initié]&rsquo; n&rsquo;a de sens que dans une alternative où le participant a déjà choisit une discipline.</p>
-<p>Voici l'écriture des intentions pour le début de notre artefact :</p>
+<p>L&rsquo;intention est contextuelle, elle dépend de l&rsquo;alternative.</p>
+<p>Dans notre exemple, l&rsquo;intention &lsquo;[#initié]&rsquo; n&rsquo;a de sens que dans une alternative où le participant a déjà choisit une discipline.</p>
+<p>Voici l'écriture des <strong>intentions</strong> pour le début de notre artefact :</p>
 <pre><code class="language-json">{
     &quot;intentions&quot;: [
         {
@@ -417,7 +417,7 @@ Dans notre exemple, l&rsquo;intention &lsquo;[#initié]&rsquo; n&rsquo;a de sens
     ]
 }
 </code></pre>
-<p>Après avoir choisit son <strong>activité</strong> le participant entre dans les intentions spécifiques :</p>
+<p>Après avoir choisit son activité le participant entre dans les <strong>intentions</strong> spécifiques de l&rsquo;activité :</p>
 <pre><code class="language-json">{
     &quot;intentions&quot;: [
         {
@@ -441,90 +441,87 @@ Cela permet à l&rsquo;assistant de reconnaître le choix du participant, lors d
 En général cette liste reste dans la <strong>sémantique</strong> de l&rsquo;intention à définir.</p>
 <p>Il ne reste plus qu'à écrire le scénario.</p>
 <h3 id="le-scénario">Le scénario</h3>
-<p>L&rsquo;assistant pourra générer la première partie du dialogue de manière automatique lorsque nous aurons écrit les scénarii spécifiques à chaque activité.
-L'écriture d&rsquo;un scénario commence donc là ou le participant entre en activité.
+<p>L&rsquo;assistant pourra générer la première partie du dialogue de manière automatique lorsque nous aurons écrit les scénarii spécifiques à chaque activité.</p>
+<p>Pour un auteur enseignant, l'écriture d&rsquo;un scénario commence donc là ou le participant entre en activité.
 Voici l'écriture du scénario &ldquo;snowboard_programmation_initié&rdquo; :</p>
 <pre><code class="language-json">{
-    &quot;scenario&quot;: {
-        &quot;code&quot;:&quot;snowboard_programmation&quot;, &quot;niveau&quot;:&quot;initié&quot;,
-        &quot;etapes&quot;:[{
-            &quot;etape&quot;:&quot;q1&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;md&quot;:&quot;
-            Ok, nous allons d'abord vous équiper d'une bonne planche.
-            J'en ai quelques-unes en réserve mais le programme de gestion des stocks n'est pas terminé. Il ne parvient pas à lister les planches. Le voici : 
-            affiche_liste() {
-                for
-                    print (planche);
-                }
+    &quot;code&quot;:&quot;snowboard_programmation&quot;, &quot;niveau&quot;:&quot;initié&quot;,
+    &quot;etapes&quot;:[{
+        &quot;etape&quot;:&quot;q1&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;md&quot;:&quot;
+        Ok, nous allons d'abord vous équiper d'une bonne planche.
+        J'en ai quelques-unes en réserve mais le programme de gestion des stocks n'est pas terminé. Il ne parvient pas à lister les planches. Le voici : 
+        affiche_liste() {
+            for
+                print (planche);
             }
-            L'instruction `for` est vide, je vois plusieurs possibilités de la compléter: 
-            - for (int i=0; i&lt;planches.length; i++) [#for_1]
-            - for planche in planches [#for_2]
-            - planches.foreach( planche =&gt; { [#for_3]
-            - for (Board planche : planches) { [#for_4]
-            Laquelle essayons-nous ?&quot;
-        },
-        {
-            &quot;etape&quot;:&quot;for_1&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;score&quot;:&quot;-1&quot;,
-            &quot;md&quot;:&quot;
-            euh ... ca ne marche pas. La varibale 'i' n'est pas utilisée dans le reste du programme. une autre idée ?
-            &quot;
-        },
-        {
-            &quot;etape&quot;:&quot;for_2&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;score&quot;:&quot;-1&quot;,
-            &quot;md&quot;:&quot;
-            Cela ne fonctionne pas. Il me semble que la bonne instruction devrait référencer la variable `planche` utilisée dans l'instruction `print`
-            &quot;
-        },
-        {
-            &quot;etape&quot;:&quot;for_3&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;score&quot;:&quot;-1&quot;,
-            &quot;md&quot;:&quot;
-            Cela ne fonctionne pas. Avec cette ligne il manque une parenthèse fermante au programme.
-            &quot;
-        },
-        {
-            &quot;etape&quot;:&quot;for_4&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;score&quot;:&quot;+1&quot;,
-            &quot;md&quot;:&quot;
-            Ah parfait, merci. Nous avons la liste des planches :
-            - Apo Selekta TwinTip 154 [#fin]
-            - Bataleon EvilTwin [#fin]
-            - Burton Custom X [#fin]
-            Les voici en image : 
-            !(Apo)[http://www.iesanetwork.com/n.auriac/snowfrance/images/test%20boardfreestyle.jpg]
-            !(Bataleon)[https://images.evo.com/imgp/700/9793/167101/bataleon-evil-twin-snowboard-2007-.jpg]
-            !(Burton)[http://www.surfshop.fr/55412-large_default/custom.jpg]
-            Ces planches sont recommandées pour le freestyle. Voici une vidéo en exemple : ![freestyle](https://www.youtube.com/watch?v=7G_nXpv8JbE).
-            Quelle planche souhaitez-vous ?
-            &quot;
-        },
-        {
-            &quot;etape&quot;:&quot;fin&quot;,
-            &quot;niveau&quot;:&quot;initié&quot;,
-            &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
-            &quot;md&quot;:&quot;
-            Très bon choix, c'est une planche facile et performante ...
-            &quot;
-        } ]
-    }
+        }
+        L'instruction `for` est vide, je vois plusieurs possibilités de la compléter: 
+        - for (int i=0; i&lt;planches.length; i++) [#for_1]
+        - for planche in planches [#for_2]
+        - planches.foreach( planche =&gt; { [#for_3]
+        - for (Board planche : planches) { [#for_4]
+        Laquelle essayons-nous ?&quot;
+    },
+    {
+        &quot;etape&quot;:&quot;for_1&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;score&quot;:&quot;-1&quot;,
+        &quot;md&quot;:&quot;
+        euh ... ca ne marche pas. La varibale 'i' n'est pas utilisée dans le reste du programme. une autre idée ?
+        &quot;
+    },
+    {
+        &quot;etape&quot;:&quot;for_2&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;score&quot;:&quot;-1&quot;,
+        &quot;md&quot;:&quot;
+        Cela ne fonctionne pas. Il me semble que la bonne instruction devrait référencer la variable `planche` utilisée dans l'instruction `print`
+        &quot;
+    },
+    {
+        &quot;etape&quot;:&quot;for_3&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;score&quot;:&quot;-1&quot;,
+        &quot;md&quot;:&quot;
+        Cela ne fonctionne pas. Avec cette ligne il manque une parenthèse fermante au programme.
+        &quot;
+    },
+    {
+        &quot;etape&quot;:&quot;for_4&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;score&quot;:&quot;+1&quot;,
+        &quot;md&quot;:&quot;
+        Ah parfait, merci. Nous avons la liste des planches :
+        - Apo Selekta TwinTip 154 [#fin]
+        - Bataleon EvilTwin [#fin]
+        - Burton Custom X [#fin]
+        Les voici en image : 
+        !(Apo)[http://www.iesanetwork.com/n.auriac/snowfrance/images/test%20boardfreestyle.jpg]
+        !(Bataleon)[https://images.evo.com/imgp/700/9793/167101/bataleon-evil-twin-snowboard-2007-.jpg]
+        !(Burton)[http://www.surfshop.fr/55412-large_default/custom.jpg]
+        Ces planches sont recommandées pour le freestyle. Voici une vidéo en exemple : ![freestyle](https://www.youtube.com/watch?v=7G_nXpv8JbE).
+        Quelle planche souhaitez-vous ?
+        &quot;
+    },
+    {
+        &quot;etape&quot;:&quot;fin&quot;,
+        &quot;savoir-faire&quot;:&quot;programmation.swift.boucle_for&quot;,
+        &quot;md&quot;:&quot;
+        Très bon choix, c'est une planche facile et performante ...
+        &quot;
+    } ]
 }
 </code></pre>
-<p>L&rsquo;assistant lit à voix haute la partie &lsquo;md&rsquo; de chaque étape.
-Dans cette partie le point d&rsquo;exclamation sert à donner un lien internet, généralement vers des ressources documentaires.
-Un libellé donné entre parenthèses () sert de lien vers une adresse donnée entre crochets [].
-Pour rappel les <strong>intentions</strong> sont nommées avec un dièse # en préfixe. Elles mènent à une étape du même nom.
-L&rsquo;assistant pourra utiliser l&rsquo;information &lsquo;score&rsquo; en la cumulant pour déterminer si un &lsquo;savoir-faire&rsquo; est acquis ou non.</p>
+<p>L&rsquo;assistant présente ou lit à voix haute la partie &lsquo;md&rsquo; de chaque étape.
+Dans cette partie le point d&rsquo;exclamation sert à donner un lien internet, généralement vers des ressources documentaires.</p>
+<p>Un libellé donné entre parenthèses () sert de lien vers une adresse donnée entre crochets [].</p>
+<p>Pour rappel les <strong>intentions</strong> sont nommées avec un dièse # en préfixe. Elles mènent à une étape du même nom.</p>
+<p>L&rsquo;assistant pourra utiliser l&rsquo;information &lsquo;score&rsquo; en la cumulant pour déterminer si un &lsquo;savoir-faire&rsquo; est acquis ou non. On remarque que les états correspondants à un mauvais choix ont un score négatif. Inversement le bon choix a un score positif.</p>
 <h2 id="créer-lassistant">Créer l&rsquo;assistant</h2>
-<p>Les &lsquo;chatbot pédagogiques&rsquo; <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> existent depuis quelques années, certains sous forme de projets open-source.
-Sont-ils faciles à utiliser ? Est-ce qu&rsquo;il y a des standards ? Est-ce compliqué à créer ? De quoi avons nous besoin ?</p>
+<p>Les &lsquo;chatbot pédagogiques&rsquo; <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> existent depuis quelques années, certains sous forme de projets open-source.</p>
+<p>Sont-ils faciles à utiliser ? Est-ce qu&rsquo;il y a des standards ? Est-ce compliqué à créer ? De quoi avons nous besoin ?</p>
 <p>Nous avons besoin :</p>
 <ul>
 <li>d&rsquo;une conversion de la voix en texte</li>
@@ -532,23 +529,23 @@ Sont-ils faciles à utiliser ? Est-ce qu&rsquo;il y a des standards ? Est-ce com
 <li>d&rsquo;analyse du langage naturel</li>
 <li>d&rsquo;analyse sémantique</li>
 <li>d&rsquo;une interface homme-machine</li>
+<li>d&rsquo;un programme capable de lire l&rsquo;artéfact</li>
 </ul>
-<p>Apple propose ces 5 services, intégrés dans un environnement de programmation stable et bien documenté.
-Ces conditions invitent à l&rsquo;essai, au prototype. Nous allons utiliser les bibliothèque de programmation de &lsquo;Siri&rsquo; <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>.</p>
+<p>Je réalise un prototype simple en utilisant &lsquo;Siri&rsquo; <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> de manière programmée.</p>
+<p><strong>Que fait le programme &ldquo;chatbot&rdquo; avec un artefact ?</strong></p>
+<p>Il prend la première étape du scénario et la présente à l&rsquo;aprenant.
+Il écoute la réponse et détermine l&rsquo;intention.
+Pour ce faire il décompose la réponse en mots, identifie le lemme de chaque mot, et recherche une ou plusieurs correspondances avec les lemmes de l&rsquo;artefact pour l'étape en cours. Il attribue un sentiment globale à la réponse, positif ou négatif, en fonction des mots (ne, pas, non, oui &hellip;).
+Si il y a une correspondance et que le sentiment est positif alors le choix qui correspondant à l&rsquo;intention détectée est validé, le chatbot passe à l'étape indiquée pour cette intention.
+Autrement, il demande de préciser la réponse.</p>
 <pre><code>pandoc -t html5 --css pandoc.css -s -o assistant.html assistant.md
 ```
 
+Les deux premières questions du dialogue servent à 'cerner les besoins de l'apprenant', elles permettent de choisir une activité.
 
-Oui les deux premières questions du dialogue servent à 'cerner les besoins de l'apprenant', elles permettent de choisir une activité.
+L'apprenant se trouve un peu en situation de réflexivité, un peu seulement, car le dialogue est limité.
 
-Oui l'apprenant se trouve un peu en situation de réflexivité, un peu seulement, car le dialogue est limité.
-
-Le tout reste un dialogue limité, aux cas prévus par l'auteur du scénario. L'auteur c'est le prof, i.e. toi ;)
-
-Oui une analyse de discours serait bien, mais j'ai un doute sur la facilité pour le programmer, et puis en regardant le 'chatbot' de 'MisterFly.com' par exemple, je pense qu'identifier des mots clés est un bon début.
-
-C'est vrai que les assistants comme 'Alexa', 'Nest', 'Siri' ... arrivent à détecter des intentions à partir d'un verbe, un sujet, un complément, la négation.
-Il devrait être bientôt possible de programmer des intentions personnalisées.
+Le tout reste un dialogue limité, aux cas prévus par l'auteur du scénario. L'auteur c'est le prof.
 
 On peut découper l'idée de l'assistant pédagogique en deux : 
  - id 1: écrire un cours sous forme d'un [&quot;livre dont vous êtes le héro&quot;](https://fr.wikipedia.org/wiki/Un_livre_dont_vous_%C3%AAtes_le_h%C3%A9ros).
