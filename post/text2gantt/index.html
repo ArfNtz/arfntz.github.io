@@ -45,7 +45,7 @@
 <meta itemprop="description" content="Gestion de projet">
 <meta itemprop="datePublished" content="2019-03-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="950">
+<meta itemprop="wordCount" content="978">
 <meta itemprop="image" content="https://arfntz.github.io/text2gantt.png">
 
 
@@ -89,7 +89,7 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">March 9, 2019</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>950 mots</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>978 mots</span>
                             <span><i class="fas fa-clock mr-2"></i>5 mins</span>
                         </div>
 
@@ -120,17 +120,17 @@ Cet article explore une alternative moins courante : l'utilisation d'un fichier 
 <p><strong>Le diagramme de Gantt</strong> est un outil utilisé en ordonnancement et en gestion de projet et permettant de visualiser dans le temps les diverses tâches composant un projet. Il s&rsquo;agit d&rsquo;une représentation d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet. - Wikipedia</p>
 </blockquote>
 <p><strong>note:</strong> L&rsquo;article <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Gantt">Diagramme de Gantt</a> de Wikipedia contient un paragraphe sur l&rsquo;offre logicielle.</p>
-<p>Regardons la solution utilisant un fichier texte et une application de transformation en diagramme :</p>
+<p>Regardons comment écrire un diagramme de Gantt dans un fichier texte, facilement transformable en diagramme :</p>
 <ul>
-<li>Le texte formaté</li>
-<li>Comment y noter les tâches d&rsquo;un projet</li>
+<li>A propos du texte formaté</li>
+<li>Comment noter les tâches d&rsquo;un projet</li>
 <li>Comment transformer les notes en diagramme</li>
 </ul>
 <p>C&rsquo;est parti :</p>
-<h1 id="le-texte-formaté">Le texte formaté</h1>
+<h1 id="a-propos-du-texte-formaté">A propos du texte formaté</h1>
 <h2 id="outillé-et-collaboratif">Outillé et collaboratif</h2>
 <p>Le fichier texte est facilement partageable, lisible et modifiable par tous, <strong>sans logiciel ni coût supplémentaire</strong>. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>Il s&rsquo;intègre naturellement à tous les environnements <strong>collaboratifs</strong> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (gMail, gDocs, Teams, SharePoint &hellip;).
+<p>Il s&rsquo;intègre naturellement à tous les environnements <strong>collaboratifs</strong> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (gMail, gDocs, Teams, SharePoint, Atlassian &hellip;).
 Nous pouvons donc :</p>
 <ul>
 <li>travailler à plusieurs simultanément</li>
@@ -141,12 +141,12 @@ Nous pouvons donc :</p>
 Pendant l'écriture, en écartant ainsi d'éventuelles questions sur la forme et la mise en page, l&rsquo;attention reste centrée sur les idées.
 Ce principe est utilisé pour l'écriture de thèses, d&rsquo;articles, ou de livres.
 Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> pour écrire, puis un modèle <code>LaTeX</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> pour la mise en forme.</p>
-<h2 id="les-langages-à-balises">Les langages à balises</h2>
+<h2 id="et-les-langages-à-balises-">Et les langages à balises ?</h2>
 <p>Bien qu&rsquo;il séparent le contenu et la présentation, bien qu&rsquo;ils restent modifiables en tant que texte, les langages à balises n&rsquo;entrent pas dans la même catégorie : il sont beaucoup moins lisibles. Beaucoup de métiers ont développé leurs propres <a href="https://fr.wikipedia.org/wiki/Langage_de_balisage">Markup Langage</a>, parfois accompagnés de feuilles de style <code>XSL</code> pour la mise en forme. La présence des balises augmente la taille du fichier et diminue la lisibilité. Ils laissent parfois place à d&rsquo;autres fichiers textes de type <code>json</code>,<code>yaml</code>.</p>
 <h2 id="le-langage-naturel">Le langage naturel</h2>
-<p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?</p>
-<p>&hellip;</p>
-<p>Pour notre diagramme de Gantt, nous allons exprimer les tâches d&rsquo;un projet le plus simplement possible.</p>
+<p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?
+Peut être qu&rsquo;un machine saura un jour nous écouter et produire un diagramme à la volée &hellip;
+En attendant, pour notre diagramme de Gantt, nous allons exprimer les tâches d&rsquo;un projet dans un format, le plus simple possible.</p>
 <h1 id="noter-les-tâches">Noter les tâches</h1>
 <p>Les notes sont prises dans un fichier texte.</p>
 <p>Il s&rsquo;agit d&rsquo;une une photo à un instant <code>t</code> d&rsquo;un projet.</p>
@@ -182,7 +182,7 @@ Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup 
 </code></pre>
 <h2 id="format">Format</h2>
 <p>Toutes les lignes suivent ce format :</p>
-<p>[status] {identifiant}. [sujet] ; {action} ; {date fin souhaitée} ; {estimation}&hellip; ; {consommation}&hellip; ; {dependance}</p>
+<p><code>[status] {identifiant}. [sujet] ; {action} ; {date fin souhaitée} ; {estimation}... ; {consommation}... ; {dependance}</code></p>
 <p>Seules les informations entre <code>[]</code> crochets sont obligatoires.
 Celles entre <code>{}</code> accolades sont facultatives.
 Les informations sont séparées par un <code>;</code> point-virgule.</p>
@@ -215,7 +215,41 @@ Le caractère <code>;</code> n&rsquo;est pas utilisé car il sert de séparateur
 <blockquote>
 <p>L&rsquo;application est écrite en langage <a href="https://swift.org">swift</a> et pourrait être convertie en ligne de commande.</p>
 </blockquote>
-<hr>
+<h2 id="hahahugoshortcode-s6-hbhb"><figure class="figure">
+    <a href="/images/tasknote_appstore_1.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasknote_appstore_1.jpg" width="130px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/tasknote_appstore_2.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasknote_appstore_2.jpg" width="130px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/tasknote_appstore_3.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasknote_appstore_3.jpg" width="130px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/tasknote_appstore_4.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasknote_appstore_4.jpg" width="130px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/tasknote_appstore_5.jpg" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/tasknote_appstore_5.jpg" width="130px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+</h2>
 <h1 id="à-propos-déditeur-de-texte">À propos d'éditeur de texte</h1>
 <p>Ils sont déjà présents en standard :</p>
 <ul>
@@ -228,9 +262,9 @@ Le caractère <code>;</code> n&rsquo;est pas utilisé car il sert de séparateur
 </ul>
 <p>Ils sont gratuits, à installer sur Windows, MacOS ou Linux :</p>
 <ul>
-<li>Microsoft <code>[vsCode](https://code.visualstudio.com)</code></li>
-<li><code>[SublimeText](https://www.sublimetext.com)</code></li>
-<li><code>[Atom](https://atom.io)</code></li>
+<li>Microsoft <a href="https://code.visualstudio.com">vsCode</a></li>
+<li><a href="https://www.sublimetext.com">SublimeText</a></li>
+<li><a href="https://atom.io">Atom</a></li>
 <li>&hellip;</li>
 </ul>
 <p>Il est toujours possible de forcer l&rsquo;export/import sans format avec</p>

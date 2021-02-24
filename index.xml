@@ -13,12 +13,21 @@
     
     
     <item>
+      <title>L&#39;assistant pédagogique</title>
+      <link>https://arfntz.github.io/post/assistant/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/assistant/</guid>
+      <description>&lt;p&gt;Bonjour, je suis l&amp;rsquo;assistant &lt;strong&gt;Biscott&lt;/strong&gt;, je propose des activités.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Prendre des notes sécurisées</title>
       <link>https://arfntz.github.io/post/memocode/</link>
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/memocode/</guid>
-      <description>&lt;p&gt;En tant que &amp;lsquo;travailleur numérique&amp;rsquo; je prend certaines notes confidentielles sur téléphone. L&#39;application &#39;Notes&#39;, intégrée à mon téléphone, permet de verrouiller l&#39;accès aux notes, mais elle ne chiffre pas la note elle même, et ne permet pas de la transférer chiffrée. Sur le store les applications m&amp;rsquo;ont semblé trop complexes. J&amp;rsquo;ai préféré &lt;strong&gt;créer une solution adaptée&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;En tant que &#39;travailleur numérique&#39; je prend des notes confidentielles sur téléphone. L&#39;application standard d&#39;Apple, &#39;Notes&#39;, bien qu&#39;elle permette de verrouiller les notes, ne les chiffre pas, et ne permet pas de la transférer chiffrées. Elle sont stockées en clair sur le téléphone ...&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -108,18 +117,6 @@ Elle est destinée au musicien qui apprend à jouer d&#39;un instrument et qui v
       <guid>https://arfntz.github.io/post/investissement_logiciel/</guid>
       <description>&lt;p&gt;Vous avez un projet personnel ? un projet d&#39;entreprise, petit ou grand ?
 Il implique la mise en oeuvre d&#39;outils logiciels ?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://arfntz.github.io/preparation/assistant/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://arfntz.github.io/preparation/assistant/</guid>
-      <description>L&amp;rsquo;assistant pédagogique  &amp;ldquo;We are natural learners&amp;rdquo;, ou &amp;ldquo;Naturellement l&#39;être humain apprend&amp;rdquo;, ou &amp;ldquo;Il est dans notre nature d&amp;rsquo;apprendre&amp;rdquo;
- est une citation de Alex Beard conférence internationale sur la pédagogie.
-Le conférencier évoque les résultats PISA 1 de différents pays, dans leurs contextes. Il soutient cette idée : créer des conditions personnalisées facilite l&amp;rsquo;apprentissage. Une personne qui choisit son programme et son rythme progresse naturellement mieux.
-Rien ne remplace l&#39;échange humain entre enseignant et apprenant.</description>
     </item>
     
   </channel>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pédagogie on Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/tags/p%C3%A9dagogie/</link>
+    <description>Recent content in pédagogie on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/tags/p%C3%A9dagogie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>L&#39;assistant pédagogique</title>
+      <link>https://arfntz.github.io/post/assistant/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/assistant/</guid>
+      <description>&lt;p&gt;Bonjour, je suis l&amp;rsquo;assistant &lt;strong&gt;Biscott&lt;/strong&gt;, je propose des activités.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
