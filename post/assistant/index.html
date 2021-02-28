@@ -45,7 +45,7 @@
 <meta itemprop="description" content="L&#39;assistant pédagogique">
 <meta itemprop="datePublished" content="2020-12-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-12-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1468">
+<meta itemprop="wordCount" content="1585">
 <meta itemprop="image" content="https://arfntz.github.io/biscott.png">
 
 
@@ -89,8 +89,8 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">December 28, 2020</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1468 mots</span>
-                            <span><i class="fas fa-clock mr-2"></i>7 mins</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>1585 mots</span>
+                            <span><i class="fas fa-clock mr-2"></i>8 mins</span>
                         </div>
 
                         <h1>L&#39;assistant pédagogique</h1>
@@ -128,7 +128,6 @@ En tant qu&rsquo;outil complémentaire, l&rsquo;assistant numérique <sup id="fn
 <p>Pour Biscott, les artefacts pédagogiques sont appelés <code>activités</code>.</p>
 <p>Côté <strong>accessibilité</strong>, en cas de problème de vue, Biscott présente l&rsquo;avantage de pouvoir être utilisé les yeux fermés, simplement en écoutant et en répondant. Cette approche explique les fonctionnalités telles que <code>parle moins/plus vite</code> ou <code>répète</code>qui ont été implémentées en standard quelque soit l&rsquo;activité en cours.</p>
 <p>Voici à quoi ressemble l&rsquo;application :</p>
-<p><a href="https://apps.apple.com/fr/app/memocode/id1503978514"><img src="/images/AppStore.png" alt="AppStore"></a></p>
 <p><figure class="figure">
     <a href="/images/biscott_dialog_light.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
         <img src="/images/biscott_dialog_light.png" width="300px"class="figure-img img-fluid"
@@ -157,6 +156,12 @@ En tant qu&rsquo;outil complémentaire, l&rsquo;assistant numérique <sup id="fn
     </a>
 </figure>
 </p>
+<p>Voici le kit de démarrage pour essayer :</p>
+<ul>
+<li>Installer l&rsquo;application depuis l&rsquo;AppStore : <a href="https://apps.apple.com/fr/app/memocode/id1503978514"><img src="/images/AppStore.png" alt="AppStore"></a></li>
+<li>Cliquer sur cette activité <code>exemple</code> pour que Biscott la démarre : <a href="/exemple.bsct"><img src="/images/biscott_56.png" alt="Activité Exemple"></a></li>
+<li>Découvrir, à suivre, comment écrire un activité.</li>
+</ul>
 <h1 id="comment-écrire-une-activité-">Comment écrire une activité ?</h1>
 <p>Un éditeur de texte est suffisant. Par exemple, sous <code>MacOS</code>, ouvrir <code>TextEdit</code>.</p>
 <p><strong>D&rsquo;un point de vue rédactionnel, l&rsquo;idée est de donner au lecteur la possibilité d&rsquo;explorer différentes alternatives.
@@ -385,16 +390,17 @@ En se grattant
 <li><code>:feelGTE:</code></li>
 <li><code>:feelLTE:</code></li>
 </ul>
-<p>En fonction des mots et des combinaisons logiques de la réponse du lecteur, l&rsquo;assistant calcul un sentiment (<code>feel</code>), positif ou négatif, compris entre -1 et 1. Par défaut seul un sentiment positif permet d&rsquo;aller vers une destination. On peut quand même permettre les destinations aux réponses dont le sentiment est négatif, en indiquant <code>:feelGTE:-0.6</code> par exemple.</p>
-<p><code>:next:</code> permet d&rsquo;enchaîner directement vers une autre étape sans poser de question au lecteur.</p>
-<p>Enfin, l&rsquo;assistant contient déjà des étapes pré-définie, que l&rsquo;on peut utiliser. Leurs noms commencent par <code>_</code> :</p>
+<p><code>:next:</code> permet d&rsquo;enchaîner directement vers une autre étape sans poser de question au lecteur. Cela permet de décomposer / séparer certaines idées en paragraphes.</p>
+<p>En fonction des mots et des combinaisons logiques de la réponse du lecteur, l&rsquo;assistant calcul un sentiment (<code>feel</code>) de certitude compris entre -1 et 1. Normalement seul un sentiment de certitude positif permet d&rsquo;aller vers une destination, mais on peut quand même permettre une destination lorsque le sentiment est négatif, en indiquant <code>:feelGTE:-0.6</code> par exemple. <code>:feelLTE:</code> agit à l&rsquo;opposé.</p>
+<p>Pour finir, l&rsquo;assistant contient déjà des étapes pré-définie, dont le nom commence par <code>_</code> :</p>
 <ul>
-<li><code>_root</code> : l&rsquo;assistant commence l&rsquo;artefact par cette étape, il faut la définir</li>
+<li><code>_intro</code> et <code>_root</code> : l&rsquo;assistant commence l&rsquo;activité par ces étapes, <strong>il faut les définir</strong></li>
 <li><code>_end</code> : c&rsquo;est une destination à utiliser pour indiquer à l&rsquo;assistant la fin de l&rsquo;artefact</li>
-<li><code>_quit_activity</code> peut être utiliser pour quitter une activité en cours et retourner au début de l&rsquo;artefact, à <code>_root</code></li>
+<li><code>_quit_activity</code> peut être utilisé pour quitter une activité en cours et retourner au début de l&rsquo;artefact, à <code>_root</code></li>
 </ul>
+<p>L’écriture d’une activité est un processus créatif et ludique. Il faut prévoir les réactions du lecteur et définir les enchaînements possibles. A vous de jouer ;)</p>
 <h1 id="comment-donner-lactivité-à-biscott-">Comment donner l&rsquo;activité à Biscott ?</h1>
-<p>Nous allons :</p>
+<p>Pour cela il faut :</p>
 <ul>
 <li>créer un fichier archive</li>
 <li>l&rsquo;envoyer à l&rsquo;appareil iOS</li>
@@ -437,10 +443,15 @@ Ci dessous il s&rsquo;agit du répertoire <code>exemple</code> :</p>
 
 <p>Un fichier est créé. Renommer l&rsquo;extension du fichier, <code>exemple.cpgz</code>, en <code>exemple.bsct</code>.</p>
 <h3 id="envoyer-lactivité-à-lappareil-ios">Envoyer l&rsquo;activité à l&rsquo;appareil iOS</h3>
-<p>Le fichier <code>exemple.bsct</code> peut être envoyé à l&rsquo;appareil iOS par mail, en pièce jointe, ou par AirDrop, ou par tout autre moyen prévu par Apple (Cloud, Drive).</p>
-<p>Un fois sur l&rsquo;appareil où Biscott est installé, ouvrir le fichier, iOS propose d&rsquo;utiliser l&rsquo;application Biscott, qui le prend en charge.</p>
+<p>Le fichier <code>exemple.bsct</code> peut être envoyé à l&rsquo;appareil iOS par mail, en pièce jointe, ou par <code>AirDrop</code>, ou par tout autre moyen prévu par Apple (Cloud, Drive).</p>
+<p>L&rsquo;appareil lance automatiquement Biscott quand un fichier <code>.bsct</code>est reçu par <code>AirDrop</code> ou ouvert depuis un mail.</p>
 <p>Biscott procède à une analyse des étapes et indique d'éventuelles anomalies. Si tout va bien l&rsquo;activité démarre.</p>
 <p>Pendant l&rsquo;activité il est possible de dire <code>activer le mode analyse</code> pour activer un affichage des critères de détection. Cela permet d&rsquo;adapter l&rsquo;activité, de modifier les enchaînements par exemple.</p>
+<h2 id="puis-je-éditer-mon-activité-sur-lappareil-ios-">Puis-je éditer mon activité sur l&rsquo;appareil iOS ?</h2>
+<p>Oui, l&rsquo;application partage ses fichiers.</p>
+<p>On peut donc utiliser le gestionnaire de fichier d&rsquo;iOS et l&rsquo;application de son choix pour éditer le texte et les images d&rsquo;une activité.</p>
+<p>Voici l&rsquo;activité <code>exemple</code> créée précédemment, vue dans le gestionnaire de fichier d&rsquo;un iPad :</p>
+<p><img src="/images/biscott_filemanager.png" alt="AppStore"></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
