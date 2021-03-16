@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+  
+     Conversational assistant | 
+    Apps &amp; Notes
+  
+</title><meta name="description" content="Interactive courses, diagnostics, training sessions, recipes ..."><meta name="author" content="Frantz Epineuse">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/favicon-32x32.png " sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0c344b">
+<link rel="icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css">
+    
+
+
+
+    
+        
+            <link rel="stylesheet" href="/dist/main.37ab3f61b95417873748.min.css">
+        
+    
+
+
+
+
+<link rel="canonical" href="https://arfntz.github.io/en/post/assistant/"><meta property="og:title" content="Conversational assistant" />
+<meta property="og:description" content="Interactive courses, diagnostics, training sessions, recipes ..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arfntz.github.io/en/post/assistant/" />
+<meta property="og:image" content="https://arfntz.github.io/biscott.png" />
+<meta property="article:published_time" content="2020-12-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-28T00:00:00+00:00" />
+<meta itemprop="name" content="Conversational assistant">
+<meta itemprop="description" content="Interactive courses, diagnostics, training sessions, recipes ...">
+<meta itemprop="datePublished" content="2020-12-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-12-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2336">
+<meta itemprop="image" content="https://arfntz.github.io/biscott.png">
+
+
+
+<meta itemprop="keywords" content="education,conversational,assistant,pedagogy," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://arfntz.github.io/biscott.png"/>
+
+<meta name="twitter:title" content="Conversational assistant"/>
+<meta name="twitter:description" content="Interactive courses, diagnostics, training sessions, recipes ..."/>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top shadow-sm" id="navbar-main-menu">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold" href="https://arfntz.github.io">Apps &amp; Notes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="navbar-nav ml-auto">
+    
+	<li class="nav-item"><a class="nav-link" href="https://arfntz.github.io/post/assistant/">fr</a>
+    </li>
+    
+
+
+                
+                    <li class="nav-item"><a class="nav-link" href="/en/">Home</a></li>
+                
+                    <li class="nav-item"><a class="nav-link" href="/en/about/">About</a></li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    
+<main class="content-page container pt-7 pb-5">
+    
+    <div class="row">
+        <div class="col">
+            <article>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="meta text-muted mb-3">
+                            <p class="created text-muted text-uppercase font-weight-bold mb-1">December 28, 2020</p>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>2336 words</span>
+                            <span><i class="fas fa-clock mr-2"></i>11 mins read</span>
+                        </div>
+
+                        <h1>Conversational assistant</h1>
+
+                        <ul class="authors list-inline"><li class="list-inline-item mr-3">
+                    <div class="media author"><div class="media-body">
+                            <h5 class="name my-0"><a href="/en/authors/frantz-epineuse/" class="small">Frantz Epineuse</a>
+                            </h5></div>
+                    </div>
+                </li></ul>
+                    </div>
+                </div><div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            <p>Hello, I am Biscott, the pedagogical assistant, for which it is easy to write interactive lessons, the medical assistant for which it is easy to program diagnostics, the cooking or training coach for which it is easy to write training sessions of recipes &hellip;</p>
+<p>The idea of this app started with a quote by Alex Beard from this <a href="https://www.ted.com/talks/alex_beard_natural_born_learners">international conference about pedagogy</a> :</p>
+<blockquote>
+<p>&ldquo;We are natural learners&rdquo;</p>
+</blockquote>
+<p>Alex Beard mentions PISA <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> results from multiple countries, in multiple contexts.
+He supports the idea that : <code>creating individually personnalised conditions makes learning easier</code>.
+The best progression is naturally reached by someone who&rsquo;s choosing his subjects and timetable.
+In this context, how can a digital assistant help  ?</p>
+<p>Of course nothing replaces direct human interaction between a teacher and a learner.
+As a complementary tool, the digital assistant <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> allow a teacher to create individual learning conditions, by giving his pedagogical artifacts <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> the strength of an individual / interactive dialog to each leaner. The teacher designs / writes an artifact. The assistant helps to setup an interactive session, in the scope of a prepared activity, and for a large number of students.</p>
+<p>For Biscott, pedagogical artifacts are called <code>activities</code>.</p>
+<p>About <strong>accessibility</strong>, in case of sight problems, Biscott has the advantage to be used eyes closed, simply by listing and answering. This approach explains some features like <code>speak slower / faster</code> or <code>repeat</code> that are implemented /available for all activities.</p>
+<p>Here is what the application looks like :</p>
+<p><figure class="figure">
+    <a href="/images/biscott_dialog_light.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/biscott_dialog_light.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/biscott_dialog2_light.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/biscott_dialog2_light.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/biscott_shop_dark.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/biscott_shop_dark.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<figure class="figure">
+    <a href="/images/biscott_edit_light.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/biscott_edit_light.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+</p>
+<p>To start and try Biscott, there are 3 steps :</p>
+<ul>
+<li>Install the application from the AppStore : <a href="https://apps.apple.com/fr/app/biscott/id1547089565?l=fr"><img src="/images/AppStore.png" alt="AppStore"></a></li>
+<li>Clic on this activity <code>exemple</code> for Biscott to start : <a href="/exemple.bsct"><img src="/images/biscott_56.png" alt="Activité Exemple"></a></li>
+<li>Discover, reading further down, how to write an activity :</li>
+</ul>
+<h1 id="how-to-write-an-activity-">How to write an activity ?</h1>
+<p>You only need a text editor. For instance, under <code>MacOS</code>, launch <code>TextEdit</code>.</p>
+<p><strong>From a writer&rsquo;s point of view, the idea is to give to the reader many alternatives to explore.
+His decisions will shape his experience : experiential learning, the best way to learn ;)</strong></p>
+<p>From a technical point of view, writing an activity starts as follows :</p>
+<pre><code class="language-md"># Title of my activity
+:discipline:Art
+A short description of my activity
+Suitable for age 6-99 yo
+</code></pre>
+<p>The sharp <code>#</code> character starts an activity, followed by its title <code>Title of my activity</code>.
+Biscott recognizes the mark <code>:discipline:</code> to classify the activity, in our case as <code>Art</code>.
+After this first line, a free text describes the activity. One can for instance mention the targeted audience, minimum age, etc.
+Next, we can add some steps to the activity, as follows :</p>
+<pre><code class="language-md">## Step1
+Here we start, once upon a time ...
+...
+Do you choose this or that ? 
+</code></pre>
+<p>The double sharp <code>##</code> mark starts a new step, followed by its unique name, in one word.
+A free text follows, it&rsquo;s the content of the step that will be displayed and read by the Biscott assistant.
+In this text it is possible to insert images and links, as follow :</p>
+<pre><code class="language-md">## Step2
+Ok, here is a picture for that : ![my pic title](myPic.jpg)
+...
+To browse the web site 'blabla' here is a link : [my link title](http://my.link.com)
+</code></pre>
+<p>The part surrounded by square brackets [] will be displayed as a link label.
+The part surrounded by curly brackets {} is the file name or internet address.
+To differentiate an image from a link, the image starts with an exclamation mark !.</p>
+<p><strong>Where do we put the text file and the images ?</strong></p>
+<blockquote>
+<p>At the root of a folder named after activity, hence, in our example, in a folder named <code>exemple</code>.
+The text filename is also named like the activity, with the extension <code>md</code> : <code>exemple.md</code>.
+All the images are placed in the folder, at its root (no sub folder)
+There must be at least on image, named after the activity, with <code>png</code> extension : <code>exemple.png</code>.
+This image will be used to present the activity.</p>
+</blockquote>
+<p><strong>Writing an activity is a fun an creative process, trying
+to imagine the reader&rsquo;s reactions and define possible alternatives.</strong></p>
+<h2 id="writing-alternatives">Writing alternatives</h2>
+<p>Here is a complete activity, with alternatives.
+Explanations follow.</p>
+<pre><code class="language-md"># Example
+:discipline:Other
+Discover the Biscott assistant with this activity.
+
+## _intro
+Hello, I'm assistant Biscott.
+
+:next:intro2
+
+## intro2
+You want to pause me ? Press my noze once.
+You  want to answer without waiting ? Press twice.
+
+:next:intro3
+
+## intro3
+Here is what we can do  :
+- cook a banana cake
+- get a tight six pack, make some gymnastic exercices
+- help me solve a quest.
+You can also ask me to tell a joke. 
+What is your choice ?
+
+:next:_root
+
+## _root
+
+:to:infos
+:lem:other,more
+:and:information,info
+:label:More information
+
+:to:_do_shop
+:lem:new
+:and:activity
+:label:New activity
+
+:to:cuisine
+:lem:eat,cook,cake,ungry
+:and:cake,banana,cook,ungry
+:label:I'm ungry
+
+:to:sport
+:lem:exercice,gymnastic,slim,sport
+:and:go,exercice,gymnastic,slim,sport
+
+:to:énigme
+:lem:help,solve,quest
+:and:help,solve,quest
+
+:to:_do_nothing
+:lem:nothing,none
+
+:to:blague_intro
+:lem:tell,joke
+:and:tell,joke
+
+## infos
+
+At any time, you can ask me :
+ - to display available activities,
+ - to export our dialog, 
+ - to speak slower or faster,
+ - to pause,
+ - to start again from the beginning,
+ - to repeat,
+ - who am I, how old I am,
+ - to help you ...
+And voilà, you know everything !
+And don't hesitate to press my noze ;)
+You can write me at the e-mail adress  : [arfntz@gmail.com](arfntz@gmail.com)
+
+## cuisine
+
+We are going to cook a banana cake for 4 persons.
+The recipe requires 5 minutes for preparation and 15 minutes to bake.
+![image of the cake](banana_logo.png)
+Do we have the  ingredients ?
+
+:to:ingredients
+:lem:no
+:feelGTE:-1
+:feelLTE:1
+:label:List the ingredients :)
+
+:to:melange
+:lem:yes
+
+## ingredients
+
+We need  :
+- 2 eggs
+- 150 grammes flour
+- 55 grammes sugar
+- 100 grammes softened butter
+- 1 teaspoon baking powder
+- 2 large ripe banana
+Tell me when it's ok to continue
+
+:to:melange
+:lem:I,am,ok,continue,ready
+:and:I,am,ok,continue,ready
+
+## melange
+
+Mix everything, starting with : 
+Eggs, sugar, flour, mashed bananas, and the butter.
+Keep a half banana to cut in washer and put on top of the cake. 
+Tell me when it's ok to continue.
+
+:to:cuisson
+:lem:I,am,ok,continue,ready
+:and:I,am,ok,continue,ready
+
+:to:ingredients
+:lem:ingredient,ingredients
+:label:Give me the ingredients
+
+## cuisson
+
+Bake at  200°C for 15 minutes.
+Have a look, cook 5 minutes more if needed.
+Et voilà ... bon appétit.
+
+:next:_root
+
+## blague_intro
+
+I know only 3 jokes.
+:next:blague
+
+## blague
+
+:next:jésus,crochet,fromage
+
+## fromage
+
+What is the preferred cheese for musicians ?
+
+:to:blague
+:lem:other,another
+
+:to:bravo
+:lem:mozzarella,mozart
+
+:to:mozzarella
+
+## bravo
+
+Bravo !
+
+:next:mozzarella
+:score:1
+
+## mozzarella
+
+Mozzarella
+
+:next:_root
+
+## jésus
+
+In french, que fait jésus quand il a mal ?
+
+:to:blague
+:lem:other,another
+
+:to:bravo
+:lem:crier,christ
+
+:to:cri
+
+## cri
+
+Jésus cri
+
+:next:_root
+
+## crochet
+
+How did Captain Hook die ?
+
+:to:blague
+:lem:other,another
+
+:to:bravo
+:lem:scratch,scratching
+
+:to:grattant
+
+## grattant
+
+He scratched himself
+
+:next:_root
+
+## sport
+
+We can do soft training, to keep in shape, with a daily activity,
+What week day do you want ?
+
+:to:natation,repos,marche,dos1,dos2
+:lem:monday,tuesday,wednesday,thursday,friday,saturday,sunday,another,other
+
+:to:_do_nothing
+:lem:none,nothing
+
+## dos1
+
+Today's program can relax your back.
+Here is the position : 
+![back](bas_du_dos.png)
+
+Start : lying down, on the back, flat.
+Then slowly reach to pictured position.
+Do this 5 times.
+See you tomorrow.
+
+## dos2
+
+![back](bas_du_dos.png)
+
+Start by placing one foot in front of the other with your front leg bent to about 45 degrees.
+Keeping your toes pointing forward, begin to press your knee directly forward.
+Press your knee past your foot until you feel a nice stretch just below the kneecap, then return to your starting position.
+Do 2 sets of 7-10 reps on each leg.
+
+
+Lying down on the back, knees bent and joined, arms crossed ;
+Bend the knees one side and the other, while turning the head at the opposite.
+Stay / keep the position for 8 seconds ;
+Make the same movement on the other side ;
+Repeat the exercise 5 times..
+See you tomorrow.
+
+## repos
+
+Lucky day, today is made for rest 😁
+See you tomorrow.
+
+
+## natation
+
+![swimming](bas_du_dos.png)
+Today we're swimming :
+- 4 lengths back,
+- 2 lenghts crawl,
+- 1 pause : 4 minutes,
+- then 10 lenghts the swim you want.
+Wood floats.
+See you tomorrow.
+
+## marche
+
+![walking](sport_divers.png)
+A walk oustide to breath the air is always good for health : about  4 kilometers.
+Rendez-vous at the beach, in the swamp, or near the lake.
+Doctors recommend  6 000 foot steps per day.
+See you tomorrow.
+
+## énigme
+
+![Hamster Roborovski](union.png)
+3 squirells names Tic,Tac, and Tuc, are standing up on a tree, near the river.
+Tic sees a lumberjack coming. He warns his two friends.
+Tac goes back in his house to hide.
+What can Tuc do ?
+
+:to:refugier
+:lem:back,go,house,home
+:and:back,go,house,home
+:label:go back home
+
+:to:rester
+:lem:swim,river,lumberjack,kill,nite,shout,wait,stay,face
+:and:swim,river,lumberjack,kill,nite,shout,wait,stay,face
+:label:face the lumberjack
+
+:to:ramener
+:lem:get,call,out,Taque,Tique,Toc,Tac,squirell,other
+:and:get,call,out,Taque,Tique,Toc,Tac,squirell,other
+:label:call Tac
+
+## refugier
+
+Tic is alone out now.
+He can't do anoything against the lumberjack, who logs the tree and destroys the 3 squirell houses.
+The squirells have to leave and build again their houses in another tree.
+
+:next:noisette
+:score:2
+
+## rester
+
+Tic and Tuc are now in front of the lumberjack, while Tac shakes in his house, frightened.
+Tic attracts the lumberjack's attention while Tuc pushes his axe into the river.
+The lummberjack, unhappy, starts his chaisaw and saws the tree in one step. 
+The squirells have to find another tree.
+
+:next:noisette
+:score:4
+
+## ramener
+
+Tac gets out and the 3 squirells face the situation together.
+While the lumberjack looks at Tac, shaking, Tic pushes the axe into the river, and Tuc unscrew the gazoline cap of the chainsaw.
+When the lumberjack tries to catch back his axe, Tac drops a nut into the chainsaw's gas tank.
+The lumberjack, without any tool, leaves.
+
+:next:noisette
+:score:10
+
+## noisette
+
+Tac stayed confined in his house during all summer. He probaly has a subscription to ApMovFlix.
+Winter has arrived, and starving, he knocks at Tic's door, asking him for some nuts.
+Does Tic accepts or refuses to give some nuts ?
+
+:to:refus
+:lem:refuse
+:label:refuse
+
+:to:accepte
+:lem:accept,give
+:and:accept,nut,yes
+:label:accept
+
+## refus
+
+Next summer, the lumberjack comes back and Tac, who has nothing to eat, is too weak to help his friends.
+The lumberjack starts his chainsaw and cuts down the tree in one step. 
+Game over this time, but you can start from the beginning and help Tic Tac and Tuc to save their houses.
+
+:next:_end
+:score:4
+
+## accepte
+
+Next summer, the lumberjack comes back and Tac, who had a few nuts to eat, is strong enough to help his friends.
+The 3 squirells manage to trick the lumberjack once again.
+Well done and thank you for your help. Tic, Tac and Tuc are fine.
+
+:next:_end
+:score:10
+
+</code></pre>
+<p>To reach the step <code>cuisine</code> the speaker / reader can use the verbs  <code>eat</code>,<code>cook</code>, or the word <code>cake</code> in his sentence, which also has to contain the word <code>cake</code> or <code>banana</code>. He can also say <code>I'm ungry</code>. This is written as follows :</p>
+<pre><code class="language-md">:to:cuisine
+:lem:eat,cook,cake,be,am
+:and:cake,banana,ungry
+:label:I'm ungry
+</code></pre>
+<ul>
+<li><code>:to:</code> is used to mark the name of the step, in one unique word</li>
+<li><code>:lem:</code> is used to list the words to be detected</li>
+<li><code>:and:</code> another list of words to be detected</li>
+<li><code>:label:</code> is used to display a button for this choice</li>
+</ul>
+<p>A lemme <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> defines a lexical and semantical unit. In the user&rsquo;s response, conjugation, gender, and number will be recognized. There is no need to enter conjugated or plural forms.</p>
+<p>Here is how the step is displayed  :
+<figure class="figure">
+    <a href="/images/etape_cuisine.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/etape_cuisine.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+</p>
+<p><strong>If needed</strong> one can use this complementary marks :</p>
+<ul>
+<li><code>:next:</code></li>
+<li><code>:feelGTE:</code></li>
+<li><code>:feelLTE:</code></li>
+</ul>
+<p><code>:next:</code> is used to chain steps, without any question or user interaction. This allows to separated ideas into paragraphs.</p>
+<p>The user&rsquo;s speech is processed to compute a <code>feel</code> indicator, between -1 and 1. If you want to activate a destination when the user makes a negative sentence, then use <code>:feelGTE:-0.6</code> for instance. <code>:feelLTE:</code> is not used.</p>
+<p>Finally, please note that Biscott assistant provides pre-defined steps, ready to be used. They have reserved names, starting with <code>_</code> :</p>
+<ul>
+<li><code>_intro</code> and <code>_root</code> : the assistant starts an activity with these mandatory entry points steps, <strong>they must be defined</strong></li>
+<li><code>_end</code> : use this destination to indicate the end of an activity.</li>
+<li><code>_quit_activity</code> can be used to quit an activity and start again from the beginning, at the <code>_root</code> step.</li>
+</ul>
+<p>Writing an activity is a fun an creative process, trying to imagine the reader&rsquo;s reactions and define possible alternatives. You can play :)</p>
+<h1 id="how-to-give-the-activity-to-biscott-">How to give the activity to Biscott ?</h1>
+<p>We will :</p>
+<ul>
+<li>create an archive file</li>
+<li>send this file to the iOS device</li>
+</ul>
+<h3 id="create-the-archive">Create the archive</h3>
+<p>Under MacOS, launch the application <code>Archive Utility</code> :
+Press the keys <code>Command-Espace</code>, this launches the MacOS search engine.
+Start typing the application&rsquo;s name, <code>Archi</code>, the application is proposed.</p>
+<figure class="figure">
+    <a href="/images/archiveUtility.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/archiveUtility.png" width="450px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<p>In Archive Utility preferences, check that the &lsquo;Use archive format&rsquo; option is set to <code>Compressed Archive</code>.</p>
+<figure class="figure">
+    <a href="/images/archiveUtilityPreferences.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/archiveUtilityPreferences.png" width="500px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<p>In the <code>File</code> menu, choose the option <code>Create archive</code></p>
+<figure class="figure">
+    <a href="/images/createArchive.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/createArchive.png" width="300px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<p>Select the folder that contains your activity file an images. Clic on <code>archive</code>.
+Here under, the folder is named <code>exemple</code> :</p>
+<figure class="figure">
+    <a href="/images/createArchiveBox.png" class="d-block" data-toggle="lightbox" data-gallery="post-gallery">
+        <img src="/images/createArchiveBox.png" width="500px"class="figure-img img-fluid"
+        /> 
+    </a>
+</figure>
+
+<p>An archive file is created. Rename the file extension from <code>exemple.cpgz</code> to <code>exemple.bsct</code>.</p>
+<h3 id="send-the-activity-to-the-ios-device">Send the activity to the iOS device</h3>
+<p>The file <code>exemple.bsct</code> can be sent to the iOS device via mail, as attachment, or via <code>AirDrop</code>, or any other way made possible by Apple (Cloud, Drive).</p>
+<p>The iOS device will automatically launch Biscott when a <code>.bsct</code> file is received via <code>AirDrop</code> or opened from a mail.</p>
+<p>Biscott analyses the steps and eventually displays anomalies. If everything is fine the activity starts.</p>
+<p>During the activity it is possible to say <code>activate the analysis mode</code> to display step detection informations. This is used to refine the activity.</p>
+<h2 id="can-i-edit-my-activity-on-the-ios-device-">Can I edit my activity on the iOS device ?</h2>
+<p>Yes. The application shares its files.</p>
+<p>Hence it is possible to use iOS&rsquo;s file manager and your favorite application to edit the text and the images of an activity.</p>
+<p>Here is a screen shot of the activity <code>exemple</code> that we created, as seen in the file manager app on iPad :</p>
+<p><img src="/images/biscott_filemanager.png" alt="AppStore"></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>PISA on <a href="https://en.wikipedia.org/wiki/Programme_for_International_Student_Assessment">wikipedia</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Digital assistant : software and hardware providing dialogue abilities using natural language, for instance &lsquo;Alexa&rsquo;, &lsquo;Google home&rsquo; or &lsquo;Home Pod&rsquo; <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Artifact : pedagogy, definition on edutechwiki <a href="http://edutechwiki.unige.ch/fr/Artefact">edutechwiki.unige.ch</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Lemme : defines a lexical and semantical unit, <a href="https://simple.wikipedia.org/wiki/Lemma_(linguistics)">wikipedia</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+                        </div><div class="tags my-3"><a class="badge badge-pill badge-light border mr-2" href="/en/tags/education">
+                                    <i class="fas fa-tag mr-2"></i>education
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/en/tags/conversational">
+                                    <i class="fas fa-tag mr-2"></i>conversational
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/en/tags/assistant">
+                                    <i class="fas fa-tag mr-2"></i>assistant
+                                </a><a class="badge badge-pill badge-light border mr-2" href="/en/tags/pedagogy">
+                                    <i class="fas fa-tag mr-2"></i>pedagogy
+                                </a></div><ul class="share nav my-3 justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2farfntz.github.io%2fen%2fpost%2fassistant%2f&text=Conversational%20assistant">
+              <i class="fa-fw fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farfntz.github.io%2fen%2fpost%2fassistant%2f&title=Conversational%20assistant">
+                <i class="fa-fw fab fa-linkedin-in"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farfntz.github.io%2fen%2fpost%2fassistant%2f&t=Conversational%20assistant">
+                <i class="fa-fw fab fa-facebook-f"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2farfntz.github.io%2fen%2fpost%2fassistant%2f&title=Conversational%20assistant">
+                <i class="fa-fw fab fa-reddit-alien"></i>
+            </a>
+        </li>
+    </nav>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        
+                    </div>
+                </div><div class="row justify-content-center my-3">
+                    <div class="col-lg-8">
+                        <div id="commento"></div>
+                        <script src="https://commento.io"></script>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+
+    
+</main>
+
+
+    <footer class="footer text-center bg-dark py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://arfntz.github.io/en/index.xml" rel="alternate" type="application/rss+xml" class="icons d-block">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a></li><li class="list-inline-item">
+                        <a href="mailto:arfntz@gmail.com" class="icons d-block">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li><li class="list-inline-item">
+                            <a href="https://github.com/arfntz" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li><li class="list-inline-item">
+                            <a href="https://cv.arfntz.fr" class="icons d-block">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                </ul>
+
+                <p class="text-muted">
+                    
+                        (c) Frantz Epineuse
+                    
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        
+            <script src="/dist/main.d608eadfe5ac0688902e.min.js"></script>
+        
+    
+
+
+
+<script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

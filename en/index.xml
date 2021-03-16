@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps &amp; Notes</title>
+    <link>https://arfntz.github.io/en/</link>
+    <description>Recent content on Apps &amp; Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>(c) Frantz Epineuse</copyright>
+    <lastBuildDate>Thu, 28 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://arfntz.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conversational assistant</title>
+      <link>https://arfntz.github.io/en/post/assistant/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/en/post/assistant/</guid>
+      <description>&lt;p&gt;Hello, I am Biscott, the pedagogical assistant, for which it is easy to write interactive lessons, the medical assistant for which it is easy to program diagnostics, the cooking or training coach for which it is easy to write training sessions of recipes &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>À propos</title>
+      <link>https://arfntz.github.io/en/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/en/about/</guid>
+      <description>🌟 🧾 ⚙️ 🏄 🗺️
+ Développement logiciel = innovation + stabilité
+ Combien de temps passé sur des problèmes techniques ?
+ Nous surfons de nouvelles vagues portées par des concepts et des méthodes de fond. Chaque spot est différent, il faut s&amp;rsquo;adapter.
+ Ce blog veut vous faire gagner du temps en photographiant des procédures efficaces.
+Les outils utilisés sont Hugo, Bootstrap, Chunky-poster. Des images freepik sont utilisées.</description>
+    </item>
+    
+  </channel>
+</rss>
