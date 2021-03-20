@@ -40,15 +40,6 @@
     </item>
     
     <item>
-      <title>Travailler en équipe sur un projet versionné</title>
-      <link>https://arfntz.github.io/post/git_essentials/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://arfntz.github.io/post/git_essentials/</guid>
-      <description>&lt;p&gt;Voici l&#39;essentiel pour travailler, bien et facilement, en équipe, sur un projet versionné. &lt;code&gt;Git&lt;/code&gt; est un outil incontournable en gestion de versions. Certainement le plus utilisé au monde. En quelques commandes vous pouvez participer à un projet versionné. Cette note montre comment.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Faire sa sauvegarde en une seule commande</title>
       <link>https://arfntz.github.io/post/sauvegardes/</link>
       <pubDate>Mon, 06 May 2019 00:00:00 +0000</pubDate>
@@ -58,13 +49,13 @@
     </item>
     
     <item>
-      <title>Ecrire un diagramme de Gantt. Suivre son projet agile.</title>
+      <title>Ecrire son planning. Suivre son projet agile.</title>
       <link>https://arfntz.github.io/post/text2gantt/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/text2gantt/</guid>
-      <description>&lt;p&gt;Pour produire un diagramme de Gantt il est courant d&#39;utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
-Cet article explore une alternative moins courante : l&#39;utilisation d&#39;un fichier texte et d&#39;une application mobile iOS.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour produire un planning il est courant d&#39;utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative simple : l&#39;utilisation d&#39;un fichier texte et d&#39;une application mobile iOS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -107,6 +98,15 @@ Il implique la mise en oeuvre d&#39;outils logiciels ?&lt;/p&gt;</description>
 &lt;p&gt;Le mot &lt;code&gt;lumière&lt;/code&gt; par exemple, avant et après le 16 ème siècle.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;On peut donc s&#39;interroger sur les expériences qui forment nos concepts et transforment notre compréhension du langage. On peut tenter de modéliser les acquis de l&#39;expérience.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Travailler en équipe sur un projet versionné</title>
+      <link>https://arfntz.github.io/post/git_essentials/</link>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://arfntz.github.io/post/git_essentials/</guid>
+      <description>&lt;p&gt;Voici l&#39;essentiel pour travailler, bien et facilement, en équipe, sur un projet versionné. &lt;code&gt;Git&lt;/code&gt; est un outil incontournable en gestion de versions. Certainement le plus utilisé au monde. En quelques commandes vous pouvez participer à un projet versionné. Cette note montre comment.&lt;/p&gt;</description>
     </item>
     
   </channel>

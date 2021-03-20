@@ -24,7 +24,7 @@
     <item>
       <title>Travailler en équipe sur un projet versionné</title>
       <link>https://arfntz.github.io/post/git_essentials/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://arfntz.github.io/post/git_essentials/</guid>
       <description>&lt;p&gt;Voici l&#39;essentiel pour travailler, bien et facilement, en équipe, sur un projet versionné. &lt;code&gt;Git&lt;/code&gt; est un outil incontournable en gestion de versions. Certainement le plus utilisé au monde. En quelques commandes vous pouvez participer à un projet versionné. Cette note montre comment.&lt;/p&gt;</description>

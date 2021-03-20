@@ -198,11 +198,6 @@
   </url>
   
   <url>
-    <loc>https://arfntz.github.io/post/git_essentials/</loc>
-    <lastmod>2019-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://arfntz.github.io/post/sauvegardes/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
   </url>
@@ -315,6 +310,11 @@
   <url>
     <loc>https://arfntz.github.io/post/explearn/</loc>
     <lastmod>2018-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://arfntz.github.io/post/git_essentials/</loc>
+    <lastmod>2018-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>

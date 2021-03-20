@@ -6,7 +6,7 @@
 
 <title>
   
-     Ecrire un diagramme de Gantt. Suivre son projet agile. | 
+     Ecrire son planning. Suivre son projet agile. | 
     Apps &amp; Notes
   
 </title><meta name="description" content="Gestion de projet"><meta name="author" content="Frantz Epineuse">
@@ -34,18 +34,18 @@
 
 
 
-<link rel="canonical" href="https://arfntz.github.io/post/text2gantt/"><meta property="og:title" content="Ecrire un diagramme de Gantt. Suivre son projet agile." />
+<link rel="canonical" href="https://arfntz.github.io/post/text2gantt/"><meta property="og:title" content="Ecrire son planning. Suivre son projet agile." />
 <meta property="og:description" content="Gestion de projet" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://arfntz.github.io/post/text2gantt/" />
 <meta property="og:image" content="https://arfntz.github.io/text2gantt.png" />
 <meta property="article:published_time" content="2019-03-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-03-09T00:00:00+00:00" />
-<meta itemprop="name" content="Ecrire un diagramme de Gantt. Suivre son projet agile.">
+<meta itemprop="name" content="Ecrire son planning. Suivre son projet agile.">
 <meta itemprop="description" content="Gestion de projet">
 <meta itemprop="datePublished" content="2019-03-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="978">
+<meta itemprop="wordCount" content="992">
 <meta itemprop="image" content="https://arfntz.github.io/text2gantt.png">
 
 
@@ -53,7 +53,7 @@
 <meta itemprop="keywords" content="gantt,app,swift," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://arfntz.github.io/text2gantt.png"/>
 
-<meta name="twitter:title" content="Ecrire un diagramme de Gantt. Suivre son projet agile."/>
+<meta name="twitter:title" content="Ecrire son planning. Suivre son projet agile."/>
 <meta name="twitter:description" content="Gestion de projet"/>
 
 </head>
@@ -90,11 +90,11 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">March 9, 2019</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>978 mots</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>992 mots</span>
                             <span><i class="fas fa-clock mr-2"></i>5 mins</span>
                         </div>
 
-                        <h1>Ecrire un diagramme de Gantt. Suivre son projet agile.</h1>
+                        <h1>Ecrire son planning. Suivre son projet agile.</h1>
 
                         <ul class="authors list-inline"><li class="list-inline-item mr-3">
                     <div class="media author"><a href="/authors/frantz-epineuse/" class="mr-3">
@@ -110,22 +110,22 @@
                     </div>
                 </div><div class="row justify-content-center mb-3">
                                 <div class="col-lg-10">
-                                    <img data-src="/images/text2gantt_hu4c0bf4a1b51430f2c0fdae39c9064961_518241_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Ecrire un diagramme de Gantt. Suivre son projet agile.">
+                                    <img data-src="/images/text2gantt_hu4c0bf4a1b51430f2c0fdae39c9064961_518241_900x500_fit_box_2.png" class="img-fluid rounded mx-auto d-block" alt="Ecrire son planning. Suivre son projet agile.">
                                 </div>
                             </div><div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="content">
-                            <p>Pour produire un diagramme de Gantt il est courant d'utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
-Cet article explore une alternative moins courante : l'utilisation d'un fichier texte et d'une application mobile iOS.</p>
+                            <p>Pour produire un planning il est courant d'utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
+Cet article explore une alternative simple : l'utilisation d'un fichier texte et d'une application mobile iOS.</p>
 <blockquote>
-<p><strong>Le diagramme de Gantt</strong> est un outil utilisé en ordonnancement et en gestion de projet et permettant de visualiser dans le temps les diverses tâches composant un projet. Il s&rsquo;agit d&rsquo;une représentation d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet. - Wikipedia</p>
+<p>Notre planning est utilisé en ordonnancement et en gestion de projet, il permet de visualiser dans le temps les diverses tâches qui composent un projet. Il s&rsquo;agit d&rsquo;une représentation d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet. - Wikipedia</p>
 </blockquote>
-<p><strong>note:</strong> L&rsquo;article <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Gantt">Diagramme de Gantt</a> de Wikipedia contient un paragraphe sur l&rsquo;offre logicielle.</p>
-<p>Regardons comment écrire un diagramme de Gantt dans un fichier texte, facilement transformable en diagramme :</p>
+<p><strong>note:</strong> Lire l&rsquo;article <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Gantt">Diagramme de Gantt</a> de Wikipedia contient un paragraphe sur l&rsquo;offre logicielle.</p>
+<p>Regardons comment écrire un planning dans un fichier texte, facilement transformable en diagramme :</p>
 <ul>
 <li>A propos du texte formaté</li>
 <li>Comment noter les tâches d&rsquo;un projet</li>
-<li>Comment transformer les notes en diagramme</li>
+<li>Comment transformer ces notes en planning / diagramme</li>
 </ul>
 <p>C&rsquo;est parti :</p>
 <h1 id="a-propos-du-texte-formaté">A propos du texte formaté</h1>
@@ -147,15 +147,15 @@ Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup 
 <h2 id="le-langage-naturel">Le langage naturel</h2>
 <p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?
 Peut être qu&rsquo;un machine saura un jour nous écouter et produire un diagramme à la volée &hellip;
-En attendant, pour notre diagramme de Gantt, nous allons exprimer les tâches d&rsquo;un projet dans un format, le plus simple possible.</p>
+En attendant, pour notre planning, nous allons exprimer les tâches d&rsquo;un projet sous une forme le plus simple possible.</p>
 <h1 id="noter-les-tâches">Noter les tâches</h1>
 <p>Les notes sont prises dans un fichier texte.</p>
 <p>Il s&rsquo;agit d&rsquo;une une photo à un instant <code>t</code> d&rsquo;un projet.</p>
 <blockquote>
-<p><strong>remarque:</strong> En utilisant un environnement collaboratif <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ces &lsquo;images&rsquo; se trouve conservées / historiées.</p>
+<p><strong>remarque:</strong> En utilisant un environnement collaboratif <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ces &lsquo;images&rsquo; se trouve conservées et versionnées.</p>
 </blockquote>
-<h2 id="exemple">Exemple</h2>
-<p>Voici un exemple, puis son explication.</p>
+<h2 id="un-exemple">Un exemple</h2>
+<p>Voici un exemple, puis son explication. L&rsquo;habitude d'écrire une tâche vient très vite. La syntaxe est simple. Il y a peu de choses à savoir.</p>
 <pre><code># Team work;;2019/05/12
 * Specification
 &gt; 1. Technical infrastructure ; Create initial document ; 2019/04/01 ; Smith,10,10 ; Smith,5,5
@@ -181,7 +181,7 @@ En attendant, pour notre diagramme de Gantt, nous allons exprimer les tâches d&
 = : en attente
 ! : risque
 </code></pre>
-<h2 id="format">Format</h2>
+<h2 id="les-explications">Les explications</h2>
 <p>Toutes les lignes suivent ce format :</p>
 <p><code>[status] {identifiant}. [sujet] ; {action} ; {date fin souhaitée} ; {estimation}... ; {consommation}... ; {dependance}</code></p>
 <p>Seules les informations entre <code>[]</code> crochets sont obligatoires.
@@ -303,22 +303,22 @@ En ce moment j&rsquo;utilise <code>vsCode</code> et son extension <code>Spell Ri
                                     <i class="fas fa-tag mr-2"></i>swift
                                 </a></div><ul class="share nav my-3 justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&text=Ecrire%20un%20diagramme%20de%20Gantt.%20Suivre%20son%20projet%20agile.">
+            <a class="nav-link" target="_blank" href="https://twitter.com/intent/tweet?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&text=Ecrire%20son%20planning.%20Suivre%20son%20projet%20agile.">
               <i class="fa-fw fab fa-twitter"></i>
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20un%20diagramme%20de%20Gantt.%20Suivre%20son%20projet%20agile.">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20son%20planning.%20Suivre%20son%20projet%20agile.">
                 <i class="fa-fw fab fa-linkedin-in"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&t=Ecrire%20un%20diagramme%20de%20Gantt.%20Suivre%20son%20projet%20agile.">
+            <a class="nav-link" target="_blank" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&t=Ecrire%20son%20planning.%20Suivre%20son%20projet%20agile.">
                 <i class="fa-fw fab fa-facebook-f"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20un%20diagramme%20de%20Gantt.%20Suivre%20son%20projet%20agile.">
+            <a class="nav-link" target="_blank" href="https://reddit.com/submit?url=https%3a%2f%2farfntz.github.io%2fpost%2ftext2gantt%2f&title=Ecrire%20son%20planning.%20Suivre%20son%20projet%20agile.">
                 <i class="fa-fw fab fa-reddit-alien"></i>
             </a>
         </li>
