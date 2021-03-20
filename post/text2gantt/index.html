@@ -45,7 +45,7 @@
 <meta itemprop="description" content="Gestion de projet">
 <meta itemprop="datePublished" content="2019-03-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="992">
+<meta itemprop="wordCount" content="993">
 <meta itemprop="image" content="https://arfntz.github.io/text2gantt.png">
 
 
@@ -90,7 +90,7 @@
                     <div class="col-lg-8">
                         <div class="meta text-muted mb-3">
                             <p class="created text-muted text-uppercase font-weight-bold mb-1">March 9, 2019</p>
-                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>992 mots</span>
+                            <span class="mr-2"><i class="fas fa-book-open mr-2"></i>993 mots</span>
                             <span><i class="fas fa-clock mr-2"></i>5 mins</span>
                         </div>
 
@@ -118,44 +118,25 @@
                             <p>Pour produire un planning il est courant d'utiliser un atelier de gestion de projet, un outil de création de diagrammes, ou bien un tableur.
 Cet article explore une alternative simple : l'utilisation d'un fichier texte et d'une application mobile iOS.</p>
 <blockquote>
-<p>Notre planning est utilisé en ordonnancement et en gestion de projet, il permet de visualiser dans le temps les diverses tâches qui composent un projet. Il s&rsquo;agit d&rsquo;une représentation d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet. - Wikipedia</p>
+<p>Notre planning est utilisé en ordonnancement et en gestion de projet, il permet de visualiser dans le temps les diverses tâches qui composent un projet. Il s&rsquo;agit d&rsquo;un graphe connexe, valué et orienté, qui permet de représenter graphiquement l&rsquo;avancement du projet à un instant <code>t</code>.</p>
 </blockquote>
 <p><strong>note:</strong> Lire l&rsquo;article <a href="https://fr.wikipedia.org/wiki/Diagramme_de_Gantt">Diagramme de Gantt</a> de Wikipedia contient un paragraphe sur l&rsquo;offre logicielle.</p>
-<p>Regardons comment écrire un planning dans un fichier texte, facilement transformable en diagramme :</p>
+<p>Regardons comment écrire notre planning :</p>
 <ul>
-<li>A propos du texte formaté</li>
 <li>Comment noter les tâches d&rsquo;un projet</li>
-<li>Comment transformer ces notes en planning / diagramme</li>
+<li>A propos du texte formaté</li>
+<li>Comment créer un rapport à partir de ces notes</li>
 </ul>
 <p>C&rsquo;est parti :</p>
-<h1 id="a-propos-du-texte-formaté">A propos du texte formaté</h1>
-<h2 id="outillé-et-collaboratif">Outillé et collaboratif</h2>
-<p>Le fichier texte est facilement partageable, lisible et modifiable par tous, <strong>sans logiciel ni coût supplémentaire</strong>. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>Il s&rsquo;intègre naturellement à tous les environnements <strong>collaboratifs</strong> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (gMail, gDocs, Teams, SharePoint, Atlassian &hellip;).
-Nous pouvons donc :</p>
-<ul>
-<li>travailler à plusieurs simultanément</li>
-<li>consulter les modifications de chacun dans le temps</li>
-</ul>
-<h2 id="le-fond-et-la-forme">Le fond et la forme</h2>
-<p>Par essence un fichier texte ne contient que la structure et les idées.
-Pendant l'écriture, en écartant ainsi d'éventuelles questions sur la forme et la mise en page, l&rsquo;attention reste centrée sur les idées.
-Ce principe est utilisé pour l'écriture de thèses, d&rsquo;articles, ou de livres.
-Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> pour écrire, puis un modèle <code>LaTeX</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> pour la mise en forme.</p>
-<h2 id="et-les-langages-à-balises-">Et les langages à balises ?</h2>
-<p>Bien qu&rsquo;il séparent le contenu et la présentation, bien qu&rsquo;ils restent modifiables en tant que texte, les langages à balises n&rsquo;entrent pas dans la même catégorie : il sont beaucoup moins lisibles. Beaucoup de métiers ont développé leurs propres <a href="https://fr.wikipedia.org/wiki/Langage_de_balisage">Markup Langage</a>, parfois accompagnés de feuilles de style <code>XSL</code> pour la mise en forme. La présence des balises augmente la taille du fichier et diminue la lisibilité. Ils laissent parfois place à d&rsquo;autres fichiers textes de type <code>json</code>,<code>yaml</code>.</p>
-<h2 id="le-langage-naturel">Le langage naturel</h2>
-<p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?
-Peut être qu&rsquo;un machine saura un jour nous écouter et produire un diagramme à la volée &hellip;
-En attendant, pour notre planning, nous allons exprimer les tâches d&rsquo;un projet sous une forme le plus simple possible.</p>
 <h1 id="noter-les-tâches">Noter les tâches</h1>
-<p>Les notes sont prises dans un fichier texte.</p>
-<p>Il s&rsquo;agit d&rsquo;une une photo à un instant <code>t</code> d&rsquo;un projet.</p>
+<p>Les notes sont prises dans un fichier texte, ce choix est expliqué plus loin.</p>
+<p>Ce texte est une une photo à un instant <code>t</code> d&rsquo;un projet.</p>
 <blockquote>
-<p><strong>remarque:</strong> En utilisant un environnement collaboratif <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ces &lsquo;images&rsquo; se trouve conservées et versionnées.</p>
+<p>En utilisant un environnement collaboratif <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ces &lsquo;photos&rsquo; se trouve conservées et versionnées.</p>
 </blockquote>
-<h2 id="un-exemple">Un exemple</h2>
-<p>Voici un exemple, puis son explication. L&rsquo;habitude d'écrire une tâche vient très vite. La syntaxe est simple. Il y a peu de choses à savoir.</p>
+<p>L&rsquo;habitude d'écrire une tâche vient très vite. La syntaxe est simple. Il y a peu de choses à savoir.</p>
+<p>Voici un exemple expliqué, puis la syntaxe.</p>
+<h2 id="exemple">Exemple</h2>
 <pre><code># Team work;;2019/05/12
 * Specification
 &gt; 1. Technical infrastructure ; Create initial document ; 2019/04/01 ; Smith,10,10 ; Smith,5,5
@@ -168,6 +149,7 @@ En attendant, pour notre planning, nous allons exprimer les tâches d&rsquo;un p
 - Construction ; Find teammates ; 2019/04/16 ; Me,15,0 
 / Delivery ; Planification ; 2019/04/16 ; PO,10,0
 </code></pre>
+<h2 id="explication">Explication</h2>
 <p>La première ligne commence par <code>#</code> pour indiquer qu&rsquo;il s&rsquo;agit d&rsquo;un <strong>thème</strong>. Les lignes à suivre feront partie du thème.</p>
 <p>La deuxième ligne commence par <code>*</code> pour indiquer qu&rsquo;il s&rsquo;agit d&rsquo;un <strong>objectif</strong>. Les lignes à suivre feront partie de l&rsquo;objectif.</p>
 <p>Les autres lignes sont des tâches. Le premier caractère de chaque ligne indique un status.</p>
@@ -181,7 +163,7 @@ En attendant, pour notre planning, nous allons exprimer les tâches d&rsquo;un p
 = : en attente
 ! : risque
 </code></pre>
-<h2 id="les-explications">Les explications</h2>
+<h2 id="syntaxe">Syntaxe</h2>
 <p>Toutes les lignes suivent ce format :</p>
 <p><code>[status] {identifiant}. [sujet] ; {action} ; {date fin souhaitée} ; {estimation}... ; {consommation}... ; {dependance}</code></p>
 <p>Seules les informations entre <code>[]</code> crochets sont obligatoires.
@@ -194,7 +176,7 @@ Chaque triplet identifie une resource <code>text</code>, une charge, une durée.
 Plusieurs triplets peuvent se suivre séparé par un espace.</p>
 <p>Les autres informations sont des champs texte.
 Le caractère <code>;</code> n&rsquo;est pas utilisé car il sert de séparateur d&rsquo;informations.</p>
-<h1 id="transformation-en-diagramme">Transformation en diagramme</h1>
+<h1 id="comment-créer-un-rapport">Comment créer un rapport</h1>
 <p>Lorsque l&rsquo;application <a href="(https://itunes.apple.com/fr/app/task-note/id1470748388)">TaskNote</a> est installée sur un appareil iOS et que le texte ci-dessus est envoyé (par mail, par airDrop, etc), l&rsquo;application <code>TaskNote</code> s&rsquo;ouvre et permet d&rsquo;exporter le diagramme et la liste des tâches au format pdf.</p>
 <p>Voici un aperçu :</p>
 <figure class="figure">
@@ -251,6 +233,27 @@ Le caractère <code>;</code> n&rsquo;est pas utilisé car il sert de séparateur
     </a>
 </figure>
 </h2>
+<h1 id="a-propos-du-texte-formaté">A propos du texte formaté</h1>
+<h2 id="outillé-et-collaboratif">Outillé et collaboratif</h2>
+<p>Le <code>texte formaté</code> est facilement partageable, lisible et modifiable par tous, <strong>sans logiciel ni coût supplémentaire</strong>. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Il s&rsquo;intègre naturellement à tous les environnements <strong>collaboratifs</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (gMail, gDocs, Teams, SharePoint, Atlassian &hellip;).</p>
+<p>Il est donc possible de :</p>
+<ul>
+<li>travailler à plusieurs simultanément</li>
+<li>consulter les modifications de chacun dans le temps</li>
+</ul>
+<h2 id="le-fond-et-la-forme">Le fond et la forme</h2>
+<p>Par essence un fichier texte ne contient que la structure et les idées.
+Pendant l'écriture, en écartant d'éventuelles questions sur la forme et la mise en page, l&rsquo;attention reste centrée sur les idées.
+Ce principe est utilisé pour l'écriture de thèses, d&rsquo;articles, ou de livres.
+Leurs auteurs utilisent une syntaxe <strong><code>MarkDown</code></strong> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> pour écrire, puis un modèle <code>LaTeX</code><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> pour la mise en forme.</p>
+<h2 id="et-les-langages-à-balises-">Et les langages à balises ?</h2>
+<p>Bien qu&rsquo;ils séparent le contenu et la présentation, bien qu&rsquo;ils restent modifiables en tant que texte, les langages à balises n&rsquo;entrent pas dans la même catégorie : il sont beaucoup moins lisibles. Beaucoup de métiers ont développé leurs propres <a href="https://fr.wikipedia.org/wiki/Langage_de_balisage">Markup Langage</a>, parfois accompagnés de feuilles de style <code>XSL</code> pour la mise en forme. La présence des balises augmente la taille du fichier et diminue la lisibilité. Ils laissent parfois place à d&rsquo;autres fichiers textes de type <code>json</code>,<code>yaml</code>.</p>
+<h2 id="le-langage-naturel">Le langage naturel</h2>
+<p>Le langage naturel (français, anglais, etc) est-il le plus évolué et précis des langages ?
+Peut être qu&rsquo;un machine saura un jour nous écouter et produire un diagramme à la volée &hellip;
+En attendant, pour notre planning, nous allons exprimer les tâches d&rsquo;un projet sous une forme le plus simple possible.</p>
+<hr>
 <h1 id="à-propos-déditeur-de-texte">À propos d'éditeur de texte</h1>
 <p>Ils sont déjà présents en standard :</p>
 <ul>
@@ -282,10 +285,10 @@ En ce moment j&rsquo;utilise <code>vsCode</code> et son extension <code>Spell Ri
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Voir la dernière partie sur cette page à propos des éditeurs de texte. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="../git_essentials/">Travailler en équipe sur un projet versionné</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p><a href="../git_essentials/">Travailler en équipe sur un projet versionné</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Voir la dernière partie sur cette page à propos des éditeurs de texte. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p><a href="https://fr.wikipedia.org/wiki/Markdown">MarkDown</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
