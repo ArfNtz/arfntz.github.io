@@ -3,44 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculateur Tarif BAM 2025/2026</title>
+  <title>Calculateur BAM 2025/2026</title>
   <style>
-    body { font-family: sans-serif; padding: 1em; background: #f9f9f9; max-width: 600px; margin: auto; }
-    h2 { color: #333; }
-    label, input, select { display: block; margin-top: 10px; }
-    input[type="checkbox"] { display: inline; margin-right: 5px; }
-    .result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-top: 20px;
+      color: #222;
+    }
+
+    .toggle-buttons label {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #eee;
+      cursor: pointer;
+    }
+
+    .toggle-buttons input[type="radio"]:checked + label,
+    .toggle-buttons input[type="checkbox"]:checked + label {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
   </style>
 </head>
 <body>
 
 <h2>Calculateur de tarif – BAM 2025/2026</h2>
 
-<label>Quotient familial (CAF) :</label>
-<select id="qf">
-  <option value=">1500">Plus de 1500 €</option>
-  <option value="1350">1350,01 - 1500 €</option>
-  <option value="1050">1050,01 - 1350 €</option>
-  <option value="900">900,01 - 1050 €</option>
-  <option value="750">750,01 - 900 €</option>
-  <option value="<750">Moins de 750 €</option>
-  <option value="0">0 - 750 €</option>
-</select>
+<div class="section">
+  <label for="qf">Quotient familial CAF :</label>
+  <select id="qf">
+    <option value=">1500">Plus de 1500 €</option>
+    <option value="1350">1350,01 - 1500 €</option>
+    <option value="1050">1050,01 - 1350 €</option>
+    <option value="900">900,01 - 1050 €</option>
+    <option value="750">750,01 - 900 €</option>
+    <option value="<750">Moins de 750 €</option>
+    <option value="0">0 - 750 €</option>
+  </select>
+</div>
 
-<label><input type="checkbox" id="savenay"> Résident à Savenay</label>
-<label><input type="checkbox" id="moins18"> Moins de 18 ans ou étudiant</label>
+<div class="section">
+  <h3>Options</h3>
+  <div class="toggle-buttons">
+    <input type="checkbox" id="savenay" hidden>
+    <label for="savenay">Résident à Savenay</label>
 
-<h3>Cours individuels</h3>
-<label><input type="checkbox" value="binome" class="coursInd"> Instrument 1ère année (cours en binôme)</label>
-<label><input type="checkbox" value="individuel" class="coursInd"> Instrument 2e année ou + (cours individuel)</label>
+    <input type="checkbox" id="moins18" hidden>
+    <label for="moins18">Moins de 18 ans / étudiant</label>
+  </div>
+</div>
 
-<h3>Cours collectifs</h3>
-<label><input type="checkbox" value="eveil" class="coursCol"> Atelier éveil</label>
-<label><input type="checkbox" value="chant" class="coursCol"> Atelier chant</label>
-<label><input type="checkbox" value="chorale" class="coursCol"> Chorale adulte</label>
-<label><input type="checkbox" value="orchestre" class="coursCol"> Atelier orchestre</label>
+<div class="section">
+  <h3>Cours individuels</h3>
+  <label><input type="checkbox" value="binome" class="coursInd"> Instrument 1ère année (binôme)</label>
+  <label><input type="checkbox" value="individuel" class="coursInd"> Instrument 2e année et + (individuel)</label>
+</div>
 
-<button onclick="calculerTarif()">Calculer</button>
+<div class="section">
+  <h3>Cours collectifs</h3>
+  <label><input type="checkbox" value="eveil" class="coursCol"> Atelier éveil</label>
+  <label><input type="checkbox" value="chant" class="coursCol"> Atelier chant</label>
+  <label><input type="checkbox" value="chorale" class="coursCol"> Chorale adulte</label>
+  <label><input type="checkbox" value="orchestre" class="coursCol"> Atelier orchestre</label>
+</div>
+
+<button onclick="calculerTarif()">Calculer le tarif</button>
 
 <div class="result" id="resultat"></div>
 
@@ -60,10 +137,10 @@
     return Math.round(valeur / 3) * 3;
   }
 
-  function appliquerReductionSavenayEtAge(prix, estSavenay, estMineur) {
-    if (!estSavenay) return prix;
-    if (estMineur) return prix * 0.2; // -80%
-    return prix * 0.7; // -30% pour adulte
+  function appliquerReduction(prix, savenay, mineur) {
+    if (!savenay) return prix;
+    if (mineur) return prix * 0.2; // -80%
+    else return prix * 0.7; // -30%
   }
 
   function calculerTarif() {
@@ -77,25 +154,20 @@
     let total = 0;
     let nbCoursInd = 0;
 
-    // Traitement cours individuels
     coursIndividuels.forEach(el => {
       const type = el.value;
-      let prixBase = grilles[type][qf] || 0;
-      prixBase = appliquerReductionSavenayEtAge(prixBase, estSavenay, estMineur);
-      total += prixBase;
+      let base = grilles[type][qf] || 0;
+      let prix = appliquerReduction(base, estSavenay, estMineur);
+      total += prix;
       nbCoursInd++;
     });
 
-    // Réduction famille si au moins 2 cours individuels
-    if (nbCoursInd >= 2) {
-      total *= 0.95;
-    }
+    if (nbCoursInd >= 2) total *= 0.95;
 
-    // Traitement cours collectifs
     coursCollectifs.forEach(el => {
       const type = el.value;
-      let prix = grilles.collectif[type] || 0;
-      prix = appliquerReductionSavenayEtAge(prix, estSavenay, estMineur);
+      let base = grilles.collectif[type] || 0;
+      let prix = appliquerReduction(base, estSavenay, estMineur);
       total += prix;
     });
 
