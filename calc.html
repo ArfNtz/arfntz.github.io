@@ -112,10 +112,12 @@
 
 <div class="section">
   <h3>Cours collectifs</h3>
-  <label><input type="checkbox" value="eveil" class="coursCol"> Atelier éveil</label>
-  <label><input type="checkbox" value="chant" class="coursCol"> Atelier chant</label>
-  <label><input type="checkbox" value="chorale" class="coursCol"> Chorale adulte</label>
-  <label><input type="checkbox" value="orchestre" class="coursCol"> Atelier orchestre</label>
+  <label><input type="checkbox" value="eveil" class="coursCol"> Atelier éveil – 102 €</label>
+  <label><input type="checkbox" value="chant" class="coursCol"> Atelier chant – 126 €</label>
+  <label><input type="checkbox" value="chorale" class="coursCol"> Chorale adulte – 156 €</label>
+  <label><input type="checkbox" value="orchestre" class="coursCol"> Atelier orchestre jeunes – 156 €</label>
+  <label><input type="checkbox" value="orchestre_adulte" class="coursCol"> Atelier orchestre adulte – 186 €</label>
+  <label><input type="checkbox" value="formation" class="coursCol"> Formation musicale – 126 €</label>
 </div>
 
 <button onclick="calculerTarif()">Calculer le tarif</button>
@@ -132,7 +134,9 @@
       eveil: 102,
       chant: 126,
       chorale: 156,
-      orchestre: 156
+      orchestre: 156,
+      orchestre_adulte: 186,
+      formation: 126
     }
   };
 
@@ -140,9 +144,10 @@
     return Math.round(valeur / 3) * 3;
   }
 
-  function appliquerReduction(prix, savenay, mineur) {
+  function appliquerReductionParSoustraction(prix, savenay, mineur) {
     if (!savenay) return prix;
-    return mineur ? prix * 0.2 : prix * 0.7;
+    let reduction = mineur ? 0.8 : 0.3;
+    return prix - (prix * reduction);
   }
 
   function calculerTarif() {
@@ -168,15 +173,16 @@
     coursIndividuels.forEach(el => {
       const type = el.value;
       const base = grilles[type][qf];
-      const reduit = appliquerReduction(base, estSavenay, estMineur);
-      explication += `  - ${type} : ${base} € → ${reduit.toFixed(2)} €\n`;
+      const reduit = appliquerReductionParSoustraction(base, estSavenay, estMineur);
+      explication += `  - ${type} : ${base} € - réduction = ${reduit.toFixed(2)} €\n`;
       totalAvantReductionFamille += reduit;
       nbCoursInd++;
     });
 
     if (nbCoursInd >= 2) {
-      explication += `\nRéduction famille : -5% sur ${totalAvantReductionFamille.toFixed(2)} €\n`;
-      totalAvantReductionFamille *= 0.95;
+      let reductionFamille = totalAvantReductionFamille * 0.05;
+      explication += `\nRéduction famille : -${reductionFamille.toFixed(2)} €\n`;
+      totalAvantReductionFamille -= reductionFamille;
     }
 
     total += totalAvantReductionFamille;
@@ -186,18 +192,17 @@
     coursCollectifs.forEach(el => {
       const type = el.value;
       const base = grilles.collectif[type];
-      const reduit = appliquerReduction(base, estSavenay, estMineur);
-      explication += `  - ${type} : ${base} € → ${reduit.toFixed(2)} €\n`;
+      const reduit = appliquerReductionParSoustraction(base, estSavenay, estMineur);
+      explication += `  - ${type} : ${base} € - réduction = ${reduit.toFixed(2)} €\n`;
       total += reduit;
     });
 
     // --- Cotisation ---
-    explication += `\nCotisation familiale : 40.00 €\n`;
+    explication += `\nCotisation annuelle : 40.00 €\n`;
     total += 40;
 
     const totalArrondi = arrondir(total);
 
-    // Résumés
     document.getElementById("resultat").innerText = `Tarif total arrondi : ${totalArrondi.toFixed(2)} €`;
     document.getElementById("explication").innerText = explication;
     document.getElementById("detailTarif").innerText =
