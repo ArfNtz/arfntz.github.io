@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur Tarif BAM</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; background: #f4f4f4; }
+    label, select, input { display: block; margin: 10px 0; }
+    .result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Calculateur de tarif – BAM 2025/2026</h2>
+
+  <label for="cours">Type de cours :</label>
+  <select id="cours">
+    <option value="binome">Instrument 1ère année (cours en binôme - 20')</option>
+    <option value="individuel">Instrument 2e année et + (cours individuel - 30')</option>
+    <option value="eveil">Atelier éveil (45')</option>
+    <option value="chant">Atelier chant (45')</option>
+    <option value="chorale">Chorale adulte (90')</option>
+    <option value="orchestre">Atelier orchestre (60')</option>
+  </select>
+
+  <label for="qf">Quotient familial (CAF) :</label>
+  <select id="qf">
+    <option value=">1500">Plus de 1500 €</option>
+    <option value="1350">1350,01 - 1500 €</option>
+    <option value="1050">1050,01 - 1350 €</option>
+    <option value="900">900,01 - 1050 €</option>
+    <option value="750">750,01 - 900 €</option>
+    <option value="<750">Moins de 750 €</option>
+    <option value="0">0 - 750 €</option>
+  </select>
+
+  <label for="nbIndividuels">Nombre de cours individuels dans la famille :</label>
+  <input type="number" id="nbIndividuels" value="1" min="1">
+
+  <button onclick="calculerTarif()">Calculer</button>
+
+  <div class="result" id="resultat"></div>
+
+  <script>
+    const grilles = {
+      binome: {
+        ">1500": 525, "1350": 384, "1050": 366, "900": 345,
+        "750": 327, "<750": 270, "0": 78
+      },
+      individuel: {
+        ">1500": 843, "1350": 759, "1050": 762, "900": 543,
+        "750": 516, "<750": 489, "0": 108
+      },
+      eveil: 102,
+      chant: 126,
+      chorale: 156,
+      orchestre: 156
+    };
+
+    function arrondir(valeur) {
+      return Math.round(valeur / 3) * 3;
+    }
+
+    function calculerTarif() {
+      const type = document.getElementById("cours").value;
+      const qf = document.getElementById("qf").value;
+      const nbIndividuels = parseInt(document.getElementById("nbIndividuels").value);
+      let tarif = 0;
+
+      if (type === "binome" || type === "individuel") {
+        tarif = grilles[type][qf] || 0;
+
+        if (nbIndividuels >= 2) {
+          tarif *= 0.95; // Réduction de 5%
+        }
+
+      } else {
+        tarif = grilles[type];
+      }
+
+      tarif = arrondir(tarif + 40); // Ajout de l’adhésion annuelle
+      document.getElementById("resultat").innerText = `Tarif total : ${tarif.toFixed(2)} €`;
+    }
+  </script>
+
+</body>
+</html>
