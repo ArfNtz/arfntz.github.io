@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Score par discipline avec réductions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    #resultat {
+      font-size: 1.1em;
+      font-weight: normal;
+      margin-top: 20px;
+    }
+
+    ul {
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calcul du Score par Discipline</h1>
+
+  <!-- Étape 1 -->
+  <div class="step active" id="step1">
+    <p>Choisissez une ou plusieurs disciplines :</p>
+    <label><input type="checkbox" class="discipline" value="d1"> d1 (100)</label><br>
+    <label><input type="checkbox" class="discipline" value="d2"> d2 (200)</label><br>
+    <label><input type="checkbox" class="discipline" value="d3"> d3 (300)</label><br>
+    <label><input type="checkbox" class="discipline" value="d4"> d4 (0)</label><br>
+    <button onclick="nextStep(1)">Suivant</button>
+  </div>
+
+  <!-- Étape 2 -->
+  <div class="step" id="step2">
+    <label>Entrez la valeur du quotient (Q) :</label>
+    <input type="number" id="quotient">
+    <button onclick="prevStep(2)">Précédent</button>
+    <button onclick="nextStep(2)">Suivant</button>
+  </div>
+
+  <!-- Étape 3 -->
+  <div class="step" id="step3">
+    <label>Option résidence choisie ?</label>
+    <select id="residence">
+      <option value="non">Non</option>
+      <option value="oui">Oui</option>
+    </select>
+    <button onclick="prevStep(3)">Précédent</button>
+    <button onclick="nextStep(3)">Suivant</button>
+  </div>
+
+  <!-- Étape 4 -->
+  <div class="step" id="step4">
+    <label>Option O choisie ?</label>
+    <select id="optionO">
+      <option value="non">Non</option>
+      <option value="oui">Oui</option>
+    </select>
+    <button onclick="prevStep(4)">Précédent</button>
+    <button onclick="calculerScore()">Voir le résultat</button>
+  </div>
+
+  <!-- Résultat -->
+  <div class="step" id="step5">
+    <h2>Résultat</h2>
+    <div id="resultat"></div>
+
+    <h3>Règles de calcul</h3>
+    <ul>
+      <li>d1 → score = 100</li>
+      <li>d2 → score = 200</li>
+      <li>d3 → score = 300</li>
+      <li>d4 → score = 0</li>
+      <li>Q entre 1000 et 1200 → -15% sur chaque discipline</li>
+      <li>Option résidence → -5%</li>
+      <li>Option O → -5%</li>
+      <li>Les réductions sont appliquées par discipline</li>
+    </ul>
+    <button onclick="restart()">Recommencer</button>
+  </div>
+
+  <script>
+    function showStep(n) {
+      document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+      document.getElementById('step' + n).classList.add('active');
+    }
+
+    function nextStep(current) {
+      if (current === 1) {
+        const checked = document.querySelectorAll('.discipline:checked');
+        if (checked.length === 0) {
+          alert("Veuillez sélectionner au moins une discipline.");
+          return;
+        }
+      }
+      if (current === 2) {
+        const q = document.getElementById("quotient").value;
+        if (q === "" || isNaN(q)) {
+          alert("Veuillez entrer un quotient valide.");
+          return;
+        }
+      }
+      showStep(current + 1);
+    }
+
+    function prevStep(current) {
+      showStep(current - 1);
+    }
+
+    function getBaseScore(discipline) {
+      switch (discipline) {
+        case "d1": return 100;
+        case "d2": return 200;
+        case "d3": return 300;
+        case "d4": return 0;
+        default: return 0;
+      }
+    }
+
+    function calculerScore() {
+      const disciplines = document.querySelectorAll(".discipline:checked");
+      const quotient = parseFloat(document.getElementById("quotient").value);
+      const residence = document.getElementById("residence").value;
+      const optionO = document.getElementById("optionO").value;
+
+      let total = 0;
+      let detailHTML = "<ul>";
+
+      disciplines.forEach(input => {
+        const code = input.value;
+        let score = getBaseScore(code);
+        const base = score;
+        let reductions = [];
+
+        if (quotient >= 1000 && quotient <= 1200) {
+          score *= 0.85;
+          reductions.push("Q -15%");
+        }
+
+        if (residence === "oui") {
+          score *= 0.95;
+          reductions.push("Résidence -5%");
+        }
+
+        if (optionO === "oui") {
+          score *= 0.95;
+          reductions.push("Option O -5%");
+        }
+
+        total += score;
+        detailHTML += `<li>${code} : base ${base} → réduit à ${score.toFixed(2)} (${reductions.join(", ") || "aucune réduction"})</li>`;
+      });
+
+      detailHTML += `</ul><p><strong>Total : ${total.toFixed(2)}</strong></p>`;
+
+      document.getElementById("resultat").innerHTML = detailHTML;
+      showStep(5);
+    }
+
+    function restart() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
