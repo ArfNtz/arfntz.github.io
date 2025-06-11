@@ -167,7 +167,6 @@ function calculerTarif() {
     nbCoursInd++;
   });
 
-  // Réduction famille si au moins 2 cours individuels
   if (nbCoursInd >= 2) {
     const reducFamille = totalIndividuel * 0.05;
     explication += `Réduction famille (5%) : -${reducFamille.toFixed(2)} €\n`;
@@ -185,11 +184,16 @@ function calculerTarif() {
     ateliersPayants.push({ type, prix });
   });
 
-  // Offrir le moins cher si au moins un cours individuel
+  // Trier du moins cher au plus cher
   ateliersPayants.sort((a, b) => a.prix - b.prix);
+
+  let atelierGratuit = null;
   if (nbCoursInd > 0 && ateliersPayants.length > 0) {
-    const gratuit = ateliersPayants.shift();
-    explication += `  - ${gratuit.type} : GRATUIT (inclus avec cours individuel)\n`;
+    atelierGratuit = ateliersPayants.shift();
+    explication += `  - ${atelierGratuit.type} : GRATUIT (inclus avec cours individuel)\n`;
+  } else if (nbCoursInd === 0 && ateliersPayants.length >= 2) {
+    atelierGratuit = ateliersPayants.shift();
+    explication += `  - ${atelierGratuit.type} : GRATUIT (2e atelier collectif offert)\n`;
   }
 
   ateliersPayants.forEach(item => {
@@ -197,7 +201,7 @@ function calculerTarif() {
     total += item.prix;
   });
 
-  // Cotisation annuelle
+  // Cotisation
   explication += `\nCotisation annuelle : 40.00 €\n`;
   total += 40;
 
