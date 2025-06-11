@@ -12,7 +12,6 @@
       max-width: 900px;
       margin: auto;
     }
-
     .section {
       background: white;
       padding: 15px;
@@ -20,20 +19,16 @@
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
-
     h2, h3 {
       color: #333;
     }
-
     label {
       display: block;
       margin: 8px 0;
     }
-
     input[type="checkbox"] {
       margin-right: 10px;
     }
-
     .toggle-buttons label {
       display: inline-block;
       margin: 5px;
@@ -43,13 +38,11 @@
       background: #eee;
       cursor: pointer;
     }
-
     .toggle-buttons input[type="checkbox"]:checked + label {
       background: #007bff;
       color: white;
       border-color: #007bff;
     }
-
     button {
       background-color: #007bff;
       color: white;
@@ -59,14 +52,12 @@
       font-size: 16px;
       cursor: pointer;
     }
-
     .result {
       margin-top: 20px;
       font-size: 1.3em;
       font-weight: bold;
       color: #222;
     }
-
     .explanation, .detail {
       margin-top: 15px;
       background: #fff;
@@ -76,7 +67,6 @@
       font-family: monospace;
       white-space: pre-wrap;
     }
-
   </style>
 </head>
 <body>
@@ -127,87 +117,97 @@
 <div class="detail" id="detailTarif"></div>
 
 <script>
-  const grilles = {
-    binome: { ">1500": 525, "1350": 384, "1050": 366, "900": 345, "750": 327, "<750": 270, "0": 78 },
-    individuel: { ">1500": 843, "1350": 759, "1050": 762, "900": 543, "750": 516, "<750": 489, "0": 108 },
-    collectif: {
-      eveil: 102,
-      chant: 126,
-      chorale: 156,
-      orchestre: 156,
-      orchestre_adulte: 186,
-      formation: 126
-    }
-  };
+const grilles = {
+  binome: { ">1500": 525, "1350": 384, "1050": 366, "900": 345, "750": 327, "<750": 270, "0": 78 },
+  individuel: { ">1500": 843, "1350": 759, "1050": 762, "900": 543, "750": 516, "<750": 489, "0": 108 },
+  collectif: {
+    eveil: 102,
+    chant: 126,
+    chorale: 156,
+    orchestre: 156,
+    orchestre_adulte: 186,
+    formation: 126
+  }
+};
 
-  function arrondir(valeur) {
-    return Math.round(valeur / 3) * 3;
+function arrondir(valeur) {
+  return Math.round(valeur / 3) * 3;
+}
+
+function appliquerReductionIndividuelle(prix, estSavenay, estMineur) {
+  if (!estSavenay) return prix;
+  let pourcentage = estMineur ? 0.80 : 0.30;
+  return prix - (prix * pourcentage);
+}
+
+function calculerTarif() {
+  const qf = document.getElementById("qf").value;
+  const estSavenay = document.getElementById("savenay").checked;
+  const estMineur = document.getElementById("moins18").checked;
+
+  const coursIndividuels = document.querySelectorAll(".coursInd:checked");
+  const coursCollectifs = document.querySelectorAll(".coursCol:checked");
+
+  let total = 0;
+  let totalIndividuel = 0;
+  let nbCoursInd = 0;
+  let explication = "";
+  let detailTarif = "";
+
+  explication += `Quotient familial : ${qf}\nRésident Savenay : ${estSavenay ? "Oui" : "Non"}\nMoins de 18 ans : ${estMineur ? "Oui" : "Non"}\n\n`;
+
+  // Cours individuels
+  explication += "Cours individuels :\n";
+  coursIndividuels.forEach(el => {
+    const type = el.value;
+    const base = grilles[type][qf];
+    const reduit = appliquerReductionIndividuelle(base, estSavenay, estMineur);
+    explication += `  - ${type} : ${base} € → ${reduit.toFixed(2)} €\n`;
+    totalIndividuel += reduit;
+    nbCoursInd++;
+  });
+
+  // Réduction famille si au moins 2 cours individuels
+  if (nbCoursInd >= 2) {
+    const reducFamille = totalIndividuel * 0.05;
+    explication += `Réduction famille (5%) : -${reducFamille.toFixed(2)} €\n`;
+    totalIndividuel -= reducFamille;
   }
 
-  function appliquerReductionParSoustraction(prix, savenay, mineur) {
-    if (!savenay) return prix;
-    let reduction = mineur ? 0.8 : 0.3;
-    return prix - (prix * reduction);
+  total += totalIndividuel;
+
+  // Cours collectifs
+  explication += `\nCours collectifs :\n`;
+  let ateliersPayants = [];
+  coursCollectifs.forEach(el => {
+    const type = el.value;
+    const prix = grilles.collectif[type];
+    ateliersPayants.push({ type, prix });
+  });
+
+  // Offrir le moins cher si au moins un cours individuel
+  ateliersPayants.sort((a, b) => a.prix - b.prix);
+  if (nbCoursInd > 0 && ateliersPayants.length > 0) {
+    const gratuit = ateliersPayants.shift();
+    explication += `  - ${gratuit.type} : GRATUIT (inclus avec cours individuel)\n`;
   }
 
-  function calculerTarif() {
-    const qf = document.getElementById("qf").value;
-    const estSavenay = document.getElementById("savenay").checked;
-    const estMineur = document.getElementById("moins18").checked;
+  ateliersPayants.forEach(item => {
+    explication += `  - ${item.type} : ${item.prix} €\n`;
+    total += item.prix;
+  });
 
-    const coursIndividuels = document.querySelectorAll(".coursInd:checked");
-    const coursCollectifs = document.querySelectorAll(".coursCol:checked");
+  // Cotisation annuelle
+  explication += `\nCotisation annuelle : 40.00 €\n`;
+  total += 40;
 
-    let total = 0;
-    let totalAvantReductionFamille = 0;
-    let nbCoursInd = 0;
-    let explication = "";
-    let detailTarif = "";
+  const totalArrondi = arrondir(total);
 
-    explication += `Quotient familial : ${qf}\n`;
-    explication += `Résident Savenay : ${estSavenay ? "Oui" : "Non"}\n`;
-    explication += `Moins de 18 ans / étudiant : ${estMineur ? "Oui" : "Non"}\n\n`;
-
-    // --- Cours individuels ---
-    explication += "Cours individuels :\n";
-    coursIndividuels.forEach(el => {
-      const type = el.value;
-      const base = grilles[type][qf];
-      const reduit = appliquerReductionParSoustraction(base, estSavenay, estMineur);
-      explication += `  - ${type} : ${base} € - réduction = ${reduit.toFixed(2)} €\n`;
-      totalAvantReductionFamille += reduit;
-      nbCoursInd++;
-    });
-
-    if (nbCoursInd >= 2) {
-      let reductionFamille = totalAvantReductionFamille * 0.05;
-      explication += `\nRéduction famille : -${reductionFamille.toFixed(2)} €\n`;
-      totalAvantReductionFamille -= reductionFamille;
-    }
-
-    total += totalAvantReductionFamille;
-
-    // --- Cours collectifs ---
-    explication += `\nCours collectifs :\n`;
-    coursCollectifs.forEach(el => {
-      const type = el.value;
-      const base = grilles.collectif[type];
-      const reduit = appliquerReductionParSoustraction(base, estSavenay, estMineur);
-      explication += `  - ${type} : ${base} € - réduction = ${reduit.toFixed(2)} €\n`;
-      total += reduit;
-    });
-
-    // --- Cotisation ---
-    explication += `\nCotisation annuelle : 40.00 €\n`;
-    total += 40;
-
-    const totalArrondi = arrondir(total);
-
-    document.getElementById("resultat").innerText = `Tarif total arrondi : ${totalArrondi.toFixed(2)} €`;
-    document.getElementById("explication").innerText = explication;
-    document.getElementById("detailTarif").innerText =
-      `Détail brut (non arrondi) : ${total.toFixed(2)} €\nArrondi au multiple de 3 : ${totalArrondi.toFixed(2)} €`;
-  }
+  document.getElementById("resultat").innerText = `Tarif total arrondi : ${totalArrondi.toFixed(2)} €`;
+  document.getElementById("explication").innerText = explication;
+  document.getElementById("detailTarif").innerText =
+    `Détail brut (non arrondi) : ${total.toFixed(2)} €\nArrondi au multiple de 3 : ${totalArrondi.toFixed(2)} €`;
+}
 </script>
 
 </body>
