@@ -3,86 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculateur Tarif BAM</title>
+  <title>Calculateur Tarif BAM 2025/2026</title>
   <style>
-    body { font-family: sans-serif; padding: 1em; background: #f4f4f4; }
-    label, select, input { display: block; margin: 10px 0; }
+    body { font-family: sans-serif; padding: 1em; background: #f9f9f9; max-width: 600px; margin: auto; }
+    h2 { color: #333; }
+    label, input, select { display: block; margin-top: 10px; }
+    input[type="checkbox"] { display: inline; margin-right: 5px; }
     .result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
   </style>
 </head>
 <body>
 
-  <h2>Calculateur de tarif – BAM 2025/2026</h2>
+<h2>Calculateur de tarif – BAM 2025/2026</h2>
 
-  <label for="cours">Type de cours :</label>
-  <select id="cours">
-    <option value="binome">Instrument 1ère année (cours en binôme - 20')</option>
-    <option value="individuel">Instrument 2e année et + (cours individuel - 30')</option>
-    <option value="eveil">Atelier éveil (45')</option>
-    <option value="chant">Atelier chant (45')</option>
-    <option value="chorale">Chorale adulte (90')</option>
-    <option value="orchestre">Atelier orchestre (60')</option>
-  </select>
+<label>Quotient familial (CAF) :</label>
+<select id="qf">
+  <option value=">1500">Plus de 1500 €</option>
+  <option value="1350">1350,01 - 1500 €</option>
+  <option value="1050">1050,01 - 1350 €</option>
+  <option value="900">900,01 - 1050 €</option>
+  <option value="750">750,01 - 900 €</option>
+  <option value="<750">Moins de 750 €</option>
+  <option value="0">0 - 750 €</option>
+</select>
 
-  <label for="qf">Quotient familial (CAF) :</label>
-  <select id="qf">
-    <option value=">1500">Plus de 1500 €</option>
-    <option value="1350">1350,01 - 1500 €</option>
-    <option value="1050">1050,01 - 1350 €</option>
-    <option value="900">900,01 - 1050 €</option>
-    <option value="750">750,01 - 900 €</option>
-    <option value="<750">Moins de 750 €</option>
-    <option value="0">0 - 750 €</option>
-  </select>
+<label><input type="checkbox" id="savenay"> Résident à Savenay</label>
+<label><input type="checkbox" id="moins18"> Moins de 18 ans ou étudiant</label>
 
-  <label for="nbIndividuels">Nombre de cours individuels dans la famille :</label>
-  <input type="number" id="nbIndividuels" value="1" min="1">
+<h3>Cours individuels</h3>
+<label><input type="checkbox" value="binome" class="coursInd"> Instrument 1ère année (cours en binôme)</label>
+<label><input type="checkbox" value="individuel" class="coursInd"> Instrument 2e année ou + (cours individuel)</label>
 
-  <button onclick="calculerTarif()">Calculer</button>
+<h3>Cours collectifs</h3>
+<label><input type="checkbox" value="eveil" class="coursCol"> Atelier éveil</label>
+<label><input type="checkbox" value="chant" class="coursCol"> Atelier chant</label>
+<label><input type="checkbox" value="chorale" class="coursCol"> Chorale adulte</label>
+<label><input type="checkbox" value="orchestre" class="coursCol"> Atelier orchestre</label>
 
-  <div class="result" id="resultat"></div>
+<button onclick="calculerTarif()">Calculer</button>
 
-  <script>
-    const grilles = {
-      binome: {
-        ">1500": 525, "1350": 384, "1050": 366, "900": 345,
-        "750": 327, "<750": 270, "0": 78
-      },
-      individuel: {
-        ">1500": 843, "1350": 759, "1050": 762, "900": 543,
-        "750": 516, "<750": 489, "0": 108
-      },
+<div class="result" id="resultat"></div>
+
+<script>
+  const grilles = {
+    binome: { ">1500": 525, "1350": 384, "1050": 366, "900": 345, "750": 327, "<750": 270, "0": 78 },
+    individuel: { ">1500": 843, "1350": 759, "1050": 762, "900": 543, "750": 516, "<750": 489, "0": 108 },
+    collectif: {
       eveil: 102,
       chant: 126,
       chorale: 156,
       orchestre: 156
-    };
+    }
+  };
 
-    function arrondir(valeur) {
-      return Math.round(valeur / 3) * 3;
+  function arrondir(valeur) {
+    return Math.round(valeur / 3) * 3;
+  }
+
+  function appliquerReductionSavenayEtAge(prix, estSavenay, estMineur) {
+    if (!estSavenay) return prix;
+    if (estMineur) return prix * 0.2; // -80%
+    return prix * 0.7; // -30% pour adulte
+  }
+
+  function calculerTarif() {
+    const qf = document.getElementById("qf").value;
+    const estSavenay = document.getElementById("savenay").checked;
+    const estMineur = document.getElementById("moins18").checked;
+
+    const coursIndividuels = document.querySelectorAll(".coursInd:checked");
+    const coursCollectifs = document.querySelectorAll(".coursCol:checked");
+
+    let total = 0;
+    let nbCoursInd = 0;
+
+    // Traitement cours individuels
+    coursIndividuels.forEach(el => {
+      const type = el.value;
+      let prixBase = grilles[type][qf] || 0;
+      prixBase = appliquerReductionSavenayEtAge(prixBase, estSavenay, estMineur);
+      total += prixBase;
+      nbCoursInd++;
+    });
+
+    // Réduction famille si au moins 2 cours individuels
+    if (nbCoursInd >= 2) {
+      total *= 0.95;
     }
 
-    function calculerTarif() {
-      const type = document.getElementById("cours").value;
-      const qf = document.getElementById("qf").value;
-      const nbIndividuels = parseInt(document.getElementById("nbIndividuels").value);
-      let tarif = 0;
+    // Traitement cours collectifs
+    coursCollectifs.forEach(el => {
+      const type = el.value;
+      let prix = grilles.collectif[type] || 0;
+      prix = appliquerReductionSavenayEtAge(prix, estSavenay, estMineur);
+      total += prix;
+    });
 
-      if (type === "binome" || type === "individuel") {
-        tarif = grilles[type][qf] || 0;
+    total += 40; // cotisation familiale
+    total = arrondir(total);
 
-        if (nbIndividuels >= 2) {
-          tarif *= 0.95; // Réduction de 5%
-        }
-
-      } else {
-        tarif = grilles[type];
-      }
-
-      tarif = arrondir(tarif + 40); // Ajout de l’adhésion annuelle
-      document.getElementById("resultat").innerText = `Tarif total : ${tarif.toFixed(2)} €`;
-    }
-  </script>
+    document.getElementById("resultat").innerText = `Tarif total : ${total.toFixed(2)} €`;
+  }
+</script>
 
 </body>
 </html>
