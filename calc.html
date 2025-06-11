@@ -9,20 +9,20 @@
       font-family: Arial, sans-serif;
       background: #f4f4f4;
       padding: 20px;
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
     }
 
-    h2 {
-      color: #333;
-    }
-
     .section {
-      margin-bottom: 20px;
       background: white;
       padding: 15px;
+      margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      color: #333;
     }
 
     label {
@@ -30,30 +30,8 @@
       margin: 8px 0;
     }
 
-    input[type="checkbox"], input[type="radio"] {
+    input[type="checkbox"] {
       margin-right: 10px;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .result {
-      font-weight: bold;
-      font-size: 1.3em;
-      margin-top: 20px;
-      color: #222;
     }
 
     .toggle-buttons label {
@@ -66,11 +44,35 @@
       cursor: pointer;
     }
 
-    .toggle-buttons input[type="radio"]:checked + label,
     .toggle-buttons input[type="checkbox"]:checked + label {
       background: #007bff;
       color: white;
       border-color: #007bff;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+
+    .explanation {
+      margin-top: 15px;
+      background: #fff;
+      padding: 15px;
+      border-left: 4px solid #007bff;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
     }
 
   </style>
@@ -92,15 +94,12 @@
   </select>
 </div>
 
-<div class="section">
-  <h3>Options</h3>
-  <div class="toggle-buttons">
-    <input type="checkbox" id="savenay" hidden>
-    <label for="savenay">Résident à Savenay</label>
+<div class="section toggle-buttons">
+  <input type="checkbox" id="savenay" hidden>
+  <label for="savenay">Résident à Savenay</label>
 
-    <input type="checkbox" id="moins18" hidden>
-    <label for="moins18">Moins de 18 ans / étudiant</label>
-  </div>
+  <input type="checkbox" id="moins18" hidden>
+  <label for="moins18">Moins de 18 ans / étudiant</label>
 </div>
 
 <div class="section">
@@ -120,6 +119,7 @@
 <button onclick="calculerTarif()">Calculer le tarif</button>
 
 <div class="result" id="resultat"></div>
+<div class="explanation" id="explication"></div>
 
 <script>
   const grilles = {
@@ -140,7 +140,7 @@
   function appliquerReduction(prix, savenay, mineur) {
     if (!savenay) return prix;
     if (mineur) return prix * 0.2; // -80%
-    else return prix * 0.7; // -30%
+    return prix * 0.7; // -30%
   }
 
   function calculerTarif() {
@@ -153,28 +153,40 @@
 
     let total = 0;
     let nbCoursInd = 0;
+    let detail = "";
 
+    // Traitement des cours individuels
     coursIndividuels.forEach(el => {
       const type = el.value;
-      let base = grilles[type][qf] || 0;
-      let prix = appliquerReduction(base, estSavenay, estMineur);
-      total += prix;
+      const base = grilles[type][qf] || 0;
+      const reduit = appliquerReduction(base, estSavenay, estMineur);
+      detail += `Cours ${type} : ${base.toFixed(2)} € → ${reduit.toFixed(2)} € (après réduction)\n`;
+      total += reduit;
       nbCoursInd++;
     });
 
-    if (nbCoursInd >= 2) total *= 0.95;
+    if (nbCoursInd >= 2) {
+      detail += `Réduction famille (5%) sur cours individuels : -5%\n`;
+      total *= 0.95;
+    }
 
+    // Traitement des cours collectifs
     coursCollectifs.forEach(el => {
       const type = el.value;
-      let base = grilles.collectif[type] || 0;
-      let prix = appliquerReduction(base, estSavenay, estMineur);
-      total += prix;
+      const base = grilles.collectif[type];
+      const reduit = appliquerReduction(base, estSavenay, estMineur);
+      detail += `Cours collectif ${type} : ${base.toFixed(2)} € → ${reduit.toFixed(2)} €\n`;
+      total += reduit;
     });
 
-    total += 40; // cotisation familiale
-    total = arrondir(total);
+    total += 40;
+    detail += `Cotisation annuelle : +40.00 €\n`;
 
-    document.getElementById("resultat").innerText = `Tarif total : ${total.toFixed(2)} €`;
+    const totalArrondi = arrondir(total);
+    detail += `\nTotal arrondi (multiple de 3) : ${totalArrondi.toFixed(2)} €`;
+
+    document.getElementById("resultat").innerText = `Tarif total : ${totalArrondi.toFixed(2)} €`;
+    document.getElementById("explication").innerText = detail;
   }
 </script>
 
