@@ -1,79 +1,405 @@
-BAM 2025/2026, Calculateur inscription famille
-Nom de famille :
-Résident Savenay :
-Quotient familial (QF):
-> 1500 €
-1350 – 1500 €
-1050 – 1349 €
-900 – 1049 €
-750 – 899 €
-0 – 749 €
-Instrument 1ère année (binôme) :
-0
-1
-2
-3
-Moins de 18 ans Instrument 2e année et + (individuel) :
-0
-1
-2
-3
-Plus de 18 ans Instrument 2e année et + (individuel) :
-0
-1
-2
-3
-Ateliers collectifs :
-Atelier éveil
-Atelier chant
-Chorale adulte
-Atelier orchestre jeunes
-Atelier orchestre adulte
-Formation musicale
-Calculer
-🖨️ Imprimer / PDF
+<!DOCTYPE html>
+<html lang="fr">
 
-📋 Tarifs des cours
-Type de cours
-Moins de 18 ans
-18 ans et +
-Instrument 1ère année (binôme) – Savenay
-384 €
--
-Instrument 2e année et + – Savenay
-543 €
-762 €
-Instrument 1ère année (binôme) – Non résident
-525 €
--
-Instrument 2e année et + – Non résident
-759 €
-843 €
-🎤 Cours collectifs (tarifs fixes)
-Atelier
-Tarif
-Atelier éveil
-102 €
-Atelier chant
-126 €
-Chorale adulte
-156 €
-Atelier orchestre jeunes
-156 €
-Atelier orchestre adulte
-186 €
-Formation musicale
-126 €
-📉 Règles de réduction
-	•	Réduction QF (cours individuels uniquement) :
-	◦	1350–1500 € : -5% (si -18 ans)
-	◦	1050–1350 € : -10% (si -18 ans)
-	◦	900–1050 € : -15% (si -18 ans)
-	◦	750–900 € : -30% (si -18 ans)
-	◦	0–750 € : -80% (tout âge)
-	•	Réduction famille : -5% supplémentaires si 2 cours individuels ou plus
-	•	Gratuité atelier :
-	◦	≥1 cours individuel → 1 atelier gratuit (le moins cher)
-	◦	≥2 ateliers seuls → 1 gratuit (le moins cher)
-	•	Cotisation fixe : 40 €, non remisable
-	•	Total arrondi au multiple de 3
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculateur BAM 2025/2026</title>
+  <style>
+    :root {
+      --main-color: #003366;
+      --accent-color: #dbe9f4;
+      --light-bg: #f4f6f8;
+      --text-color: #1a1a1a;
+      --soft-shadow: rgba(0, 0, 0, 0.08);
+      --border-radius: 12px;
+      --font-stack: 'Segoe UI', 'Helvetica Neue', 'Roboto', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background: var(--light-bg);
+      color: var(--text-color);
+      margin: auto;
+      max-width: 1200px;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: var(--main-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid var(--main-color);
+      padding-left: 15px;
+    }
+
+    h3,
+    h4 {
+      color: var(--main-color);
+      margin-top: 30px;
+      font-weight: 600;
+    }
+
+    .section {
+      background: #fff;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 24px var(--soft-shadow);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      box-shadow: 0 12px 32px var(--soft-shadow);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    input[type="text"] {
+      padding: 8px 12px;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      background: var(--accent-color);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .radio-group input,
+    .checkbox-group input {
+      margin-right: 6px;
+    }
+
+    .radio-group label:hover,
+    .checkbox-group label:hover {
+      background: #c9dfea;
+    }
+
+    button {
+      background: var(--main-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #001f4d;
+    }
+
+    .print-button {
+      text-align: right;
+      margin-top: 24px;
+    }
+
+    .result {
+      font-size: 1.1rem;
+      font-weight: 500;
+      background: #f8fbff;
+      border-left: 5px solid var(--main-color);
+      padding: 16px;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    pre {
+      background: #eef5fb;
+      padding: 16px;
+      border-left: 5px solid var(--main-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      #resultat,
+      #resultat * {
+        visibility: visible;
+      }
+
+      #resultat {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: white;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>BAM 2025/2026, Calculateur inscription famille</h2>
+
+  <div class="grid-container">
+    <form id="bamForm" class="section">
+      <label for="nomFamille">Nom de famille :
+        <input type="text" id="nomFamille" name="nomFamille" required>
+      </label>
+
+      <label>Résident Savenay :
+        <input type="checkbox" id="savenay" style="margin-left: 8px;">
+      </label>
+
+      <label>Quotient familial (QF):
+        <div class="radio-group">
+          <label><input type="radio" name="qf" value=">1500" checked>&gt; 1500 €</label>
+          <label><input type="radio" name="qf" value="1350">1350 – 1500 €</label>
+          <label><input type="radio" name="qf" value="1050">1050 – 1349 €</label>
+          <label><input type="radio" name="qf" value="900">900 – 1049 €</label>
+          <label><input type="radio" name="qf" value="750">750 – 899 €</label>
+          <label><input type="radio" name="qf" value="0">0 – 749 €</label>
+        </div>
+      </label>
+
+      <label>Instrument 1ère année (binôme) :</label>
+      <div class="radio-group">
+        <label><input type="radio" name="binome" value="0" checked>0</label>
+        <label><input type="radio" name="binome" value="1">1</label>
+        <label><input type="radio" name="binome" value="2">2</label>
+        <label><input type="radio" name="binome" value="3">3</label>
+      </div>
+
+      <label>Moins de 18 ans Instrument 2e année et + (individuel) :</label>
+      <div class="radio-group">
+        <label><input type="radio" name="indiv_m18" value="0" checked>0</label>
+        <label><input type="radio" name="indiv_m18" value="1">1</label>
+        <label><input type="radio" name="indiv_m18" value="2">2</label>
+        <label><input type="radio" name="indiv_m18" value="3">3</label>
+      </div>
+
+      <label>Plus de 18 ans Instrument 2e année et + (individuel) :</label>
+      <div class="radio-group">
+        <label><input type="radio" name="indiv_adulte" value="0" checked>0</label>
+        <label><input type="radio" name="indiv_adulte" value="1">1</label>
+        <label><input type="radio" name="indiv_adulte" value="2">2</label>
+        <label><input type="radio" name="indiv_adulte" value="3">3</label>
+      </div>
+
+      <label>Ateliers collectifs :</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" class="atelier" value="102"> Atelier éveil</label>
+        <label><input type="checkbox" class="atelier" value="126"> Atelier chant</label>
+        <label><input type="checkbox" class="atelier" value="156"> Chorale adulte</label>
+        <label><input type="checkbox" class="atelier" value="156"> Atelier orchestre jeunes</label>
+        <label><input type="checkbox" class="atelier" value="186"> Atelier orchestre adulte</label>
+        <label><input type="checkbox" class="atelier" value="126"> Formation musicale</label>
+      </div>
+
+      <button type="button" onclick="calculerTotal()">Calculer</button>
+      <div class="print-button"><button onclick="window.print()">🖨️ Imprimer / PDF</button></div>
+    </form>
+
+    <div id="resultat" class="section result"></div>
+  </div>
+
+  <div class="section">
+    <h3>📋 Tarifs des cours</h3>
+    <!-- ... tableau des tarifs ... -->
+    <table>
+      <thead>
+        <tr>
+          <th>Type de cours</th>
+          <th>Moins de 18 ans</th>
+          <th>18 ans et +</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Instrument 1ère année (binôme) – Savenay</td><td>384 €</td><td>-</td></tr>
+        <tr><td>Instrument 2e année et + – Savenay</td><td>543 €</td><td>762 €</td></tr>
+        <tr><td>Instrument 1ère année (binôme) – Non résident</td><td>525 €</td><td>-</td></tr>
+        <tr><td>Instrument 2e année et + – Non résident</td><td>759 €</td><td>843 €</td></tr>
+      </tbody>
+    </table>
+    <h4>🎤 Cours collectifs (tarifs fixes)</h4>
+    <table>
+      <thead>
+        <tr><th>Atelier</th><th>Tarif</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Atelier éveil</td><td>102 €</td></tr>
+        <tr><td>Atelier chant</td><td>126 €</td></tr>
+        <tr><td>Chorale adulte</td><td>156 €</td></tr>
+        <tr><td>Atelier orchestre jeunes</td><td>156 €</td></tr>
+        <tr><td>Atelier orchestre adulte</td><td>186 €</td></tr>
+        <tr><td>Formation musicale</td><td>126 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h3>📉 Règles de réduction</h3>
+    <ul>
+      <li><strong>Réduction QF</strong> (cours individuels uniquement) :
+        <ul>
+          <li>1350–1500 € : -5% (si -18 ans)</li>
+          <li>1050–1350 € : -10% (si -18 ans)</li>
+          <li>900–1050 € : -15% (si -18 ans)</li>
+          <li>750–900 € : -30% (si -18 ans)</li>
+          <li>0–750 € : -80% (tout âge)</li>
+        </ul>
+      </li>
+      <li><strong>Réduction famille</strong> : -5% supplémentaires si 2 cours individuels ou plus</li>
+      <li><strong>Gratuité atelier</strong> :
+        <ul>
+          <li>≥1 cours individuel → 1 atelier gratuit (le moins cher)</li>
+          <li>≥2 ateliers seuls → 1 gratuit (le moins cher)</li>
+        </ul>
+      </li>
+      <li><strong>Cotisation fixe</strong> : 40 €, non remisable</li>
+      <li><strong>Total arrondi</strong> au multiple de 3</li>
+    </ul>
+  </div>
+
+
+    <script>
+        function calculerTotal() {
+            const qfStr = document.querySelector('input[name="qf"]:checked').value;
+            const savenay = document.getElementById('savenay').checked;
+            const binome = parseInt(document.querySelector('input[name="binome"]:checked').value);
+            const indivM18 = parseInt(document.querySelector('input[name="indiv_m18"]:checked').value);
+            const indivAdulte = parseInt(document.querySelector('input[name="indiv_adulte"]:checked').value);
+            const ateliers = Array.from(document.querySelectorAll('.atelier:checked')).map(a => parseInt(a.value));
+
+            const binomeTarif = savenay ? 384 : 525;
+            const indivM18Tarif = savenay ? 543 : 759;
+            const indivAdulteTarif = savenay ? 762 : 843;
+
+            const indivM18Total = indivM18 * indivM18Tarif;
+            const indivAdulteTotal = indivAdulte * indivAdulteTarif;
+            const binomeTotal = binome * binomeTarif;
+
+            let totalIndivInit = binomeTotal + indivM18Total + indivAdulteTotal;
+
+            let reduction = 0;
+            if (qfStr === "1350") reduction = 5;
+            else if (qfStr === "1050") reduction = 10;
+            else if (qfStr === "900") reduction = 15;
+            else if (qfStr === "750") reduction = 30;
+            else if (qfStr === "0") reduction = 80;
+
+            const m18TotalWithReduction = (binomeTotal + indivM18Total) * (1 - reduction / 100);
+            const totalIndivBeforeFamily = m18TotalWithReduction + indivAdulteTotal;
+
+            let totalIndiv = totalIndivBeforeFamily;
+            const nbCoursIndiv = binome + indivM18 + indivAdulte;
+            if (nbCoursIndiv >= 2 && indivAdulte === 0) totalIndiv *= 0.95;
+
+            ateliers.sort((a, b) => a - b);
+            const atelierTotalFull = ateliers.reduce((sum, val) => sum + val, 0);
+            let gratuit = 0;
+            if (nbCoursIndiv > 0 && ateliers.length > 0) gratuit = ateliers[0];
+            else if (ateliers.length >= 2) gratuit = ateliers[0];
+            const atelierTotal = atelierTotalFull - gratuit;
+
+            const totalBrut = totalIndiv + atelierTotal;
+            const totalArrondi = Math.round(totalBrut / 3) * 3;
+            const cotisation = 40;
+            const nomFamille = document.getElementById('nomFamille').value.trim();
+
+document.getElementById('resultat').innerHTML =
+  `<div class="resume-section">
+    <h4>📄 Résumé de l'inscription</h4>
+    <p>Famille : <strong>${nomFamille || "(Nom non renseigné)"}</strong></p>
+    <ul>
+      <li>QF : ${qfStr}</li>
+      <li>Résident Savenay : ${savenay ? "Oui" : "Non"}</li>
+      <li>Instrument 1ère année (binôme) : ${binome}</li>
+      <li>Instrument 2e année (<18) : ${indivM18}</li>
+      <li>Instrument 2e année (18+) : ${indivAdulte}</li>
+      <li>Ateliers choisis : ${ateliers.length}</li>
+    </ul>
+  </div>
+
+    <h4 style="margin-top: 24px;">Détail des calculs</h4>
+  <div class="calcul-detail" style="line-height: 1.4; font-size: 0.95rem;">
+    ${binome > 0 ? `<div>Instrument 1ère année (binôme) : ${binomeTarif} € × ${binome} = <strong>${binomeTotal.toFixed(2)} €</strong></div>` : ''}
+    ${indivM18 > 0 ? `<div>Instrument 2e année (-18 ans) : ${indivM18Tarif} € × ${indivM18} = <strong>${indivM18Total.toFixed(2)} €</strong></div>` : ''}
+    ${indivAdulte > 0 ? `<div>Instrument 2e année (18 ans+) : ${indivAdulteTarif} € × ${indivAdulte} = <strong>${indivAdulteTotal.toFixed(2)} €</strong></div>` : ''}
+
+    <div>Sous-total cours individuels : <strong>${totalIndivInit.toFixed(2)} €</strong></div>
+    <div>Réduction QF appliquée : ${reduction}%</div>
+    <div>Après réduction QF : <strong>${m18TotalWithReduction.toFixed(2)} €</strong></div>
+    <div>Réduction famille : ${(nbCoursIndiv >= 2 && indivAdulte === 0) ? 'Oui (-5%)' : 'Non'}</div>
+    <div><strong>Total cours individuels après réductions :</strong> ${totalIndiv.toFixed(2)} €</div>
+
+    <div>Total ateliers (avant gratuité) : ${atelierTotalFull.toFixed(2)} €</div>
+    <div>Gratuité atelier appliquée : ${gratuit} €</div>
+    <div><strong>Total ateliers après gratuité :</strong> ${atelierTotal.toFixed(2)} €</div>
+
+    <div>Total brut : ${totalBrut.toFixed(2)} €</div>
+    <div>Total arrondi : <strong>${totalArrondi} €</strong></div>
+    <div>Cotisation fixe : <strong>${cotisation} €</strong></div>
+    <div style="margin-top: 6px; font-size: 1.1rem; font-weight: bold;">💳 Total à payer : <strong>${totalArrondi + cotisation} €</strong></div>
+  </div>
+`;
+        }
+    </script>
+</body>
+
+</html>
